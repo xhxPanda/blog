@@ -1,0 +1,15 @@
+.main-box{
+	padding-top: 60px;
+	padding-right: 10%;
+}
+.title-box{
+	padding-top: 150px;
+}
+.tips{
+	color: red;
+	margin-left: 10px;
+}
+#container{
+	height: auto !important;
+	
+}

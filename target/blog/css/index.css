@@ -1,0 +1,72 @@
+#carousel-example-generic{
+	height: 100%;
+}
+.carousel-inner{
+	height: 100%;
+}
+#carousel-example-generic .carousel-inner .item{
+	height: 100%;
+}
+#carousel-example-generic .carousel-inner .item img{
+	height: 100%;
+	width: 100%;
+}
+.carousel-caption{
+	font-size: 40px;
+	bottom: 35%;
+}
+.head-down-font{
+	margin-top: 20px;
+	margin-bottom: 40px;
+	color: grey;
+	font-size: 15px;
+	text-align: center;
+}
+.btn-head-img{
+	width: 188px;
+    color: white;
+    height: 47px;
+    background-color: transparent;
+    border-color: white; 
+}
+.artical-box{
+	height: 775px;
+}
+.artical-box-font-all{
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.artical-box-head-img{
+	height: 35%;
+	width: 100%;
+}
+.artical-box-head-img img{
+	height: 100%;
+	width: 100%;
+}
+.artical-box-font-all{
+	margin-top: 10%;
+}
+.artical-box-type{
+	text-align: center;
+	color: #7e889d;
+}
+.artical-box-title{
+	margin-top: 5%;
+	color: #fc3768;
+	font-weight: bold;
+	text-align: center;
+}
+.artical-box-summary{
+	text-align: center;
+	margin-top: 20%;
+	font-size: 16px;
+}
+.loadMore{
+	width: 100%;
+}
+.loadMore button{
+	margin:auto auto;
+	display: block !important;
+	margin-bottom: 30px;
+}
