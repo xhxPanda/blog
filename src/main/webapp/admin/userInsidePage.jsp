@@ -51,8 +51,8 @@
 		<div class="title-box col-md-3">
 			<div class="panel panel-default">
 				<ul class="nav nav-pills nav-stacked" role="tablist">
-				 	<li role="presentation"><a href="#">用户管理</a></li>
-				 	<li role="presentation" class="active"><a href="#">文章管理</a></li>
+				 	<li role="presentation" class="active"><a href="#">用户管理</a></li>
+				 	<li role="presentation"><a href="#">文章管理</a></li>
 				 	<li role="presentation"><a href="#">分类管理</a></li>
 				</ul>
 			</div>
@@ -60,27 +60,16 @@
 		
 		<div class="main-box col-md-9">
 			<div class="panel panel-default">
-			  <div class="panel-heading">文章</div>
+			  <div class="panel-heading">用户</div>
 			  <div class="panel-body">
 			   	 <form>
 			   	 	<div class="form-group">
-					   <label for="TITLE">TITLE</label>
-					   <input type="text" class="form-control" id="TITLE">
+					   <label for="username">USERNAME</label>
+					   <input type="text" class="form-control" id="username">
 					</div>
-				  	<div class="form-group">
-				    	<label for="SUMMARY">SUMMARY<span class="tips">(30字以内)</span></label>
-				    	<textarea class="form-control"></textarea>
-				    </div>
 				    <div class="form-group">
-				    	<label for="exampleInputPassword1">TYPE</label>
-				    	<select class="form-control">
-				    		<option>请选择</option>
-				    	</select>
-				    </div>
-				    <div class="form-group">
-				    	<label for="exampleInputPassword1">COMMENT</label>
-				    	<script id="container" name="content" type="text/plain" style="height: 1500px;">
-					    </script>
+				    	<label for="exampleInputPassword1">PASSWORD</label>
+				    	<input type="text" class="form-control" id="username">
 				    </div>
 				    <div class="form-group">
 				    	<label for="exampleInputPassword1">COVER IMG</label>
