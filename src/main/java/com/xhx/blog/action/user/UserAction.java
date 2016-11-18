@@ -1,5 +1,8 @@
 package com.xhx.blog.action.user;
 
+import java.io.File;
+
+import org.apache.struts2.ServletActionContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -13,7 +16,6 @@ public class UserAction extends BaseAction<User>{
 	
 	private String loginName;
 	private String password; 
-	private String headSculpture; 
 	
 	public String login(){
 		
@@ -31,11 +33,19 @@ public class UserAction extends BaseAction<User>{
 		User user = new User();
 		user.setLoginName(loginName);
 		user.setPassword(password);
-		user.setHeadSculpture(headSculpture);
 		
+//		String path = ServletActionContext.getServletContext().getRealPath(
+//				getSavePath());
+//		
+//		String filePath = path + "\\" + getFileName();
+
+//		user.setHeadSculpture(filePath);
+		 
 		if(null==user.getLoginName()||null==user.getPassword()||null==user.getHeadSculpture()){
 			result = JsonUtil.fail();
+			return ERROR;
 		}else{
+			userService.save(user);
 			result = JsonUtil.succ();
 		}
 		
@@ -57,13 +67,5 @@ public class UserAction extends BaseAction<User>{
 	public void setLoginName(String loginName) {
 		this.loginName = loginName;
 	}
-
-	public String getHeadSculpture() {
-		return headSculpture;
-	}
-
-	public void setHeadSculpture(String headSculpture) {
-		this.headSculpture = headSculpture;
-	}
-
+	
 }

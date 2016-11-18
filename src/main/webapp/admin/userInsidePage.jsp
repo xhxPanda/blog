@@ -11,40 +11,21 @@
 		<script src="../js/jquery.min.js"></script>
 		<script src="../js/bootstrap.min.js"></script>
 
-
-		<!-- 配置文件 -->
-   		 <script type="text/javascript" src="../js/utf8-jsp/ueditor.config.js"></script>
-   		 <!-- 编辑器源码文件 -->
-    	<script type="text/javascript" src="../js/utf8-jsp/ueditor.all.js"></script>
-	    <script type="text/javascript" charset="utf-8" src="../js/utf8-jsp/lang/zh-cn/zh-cn.js"></script>
-
-    	<script type="text/javascript">
-	        var ue = UE.getEditor('container');
-	    </script>
-
-		<link rel="stylesheet" href="../css/admin/articalInsidePage.css">
-
 		<!-- fileLoad文件 -->
 		<link href="../css/fileLoadCSS/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
-
-
-		<script src="../js/fileLoadJs/plugins/canvas-to-blob.min.js" type="text/javascript"></script>
+		<!-- <script src="../js/fileLoadJs/plugins/canvas-to-blob.min.js" type="text/javascript"></script> -->
 		<!-- sortable.min.js is only needed if you wish to sort / rearrange files in initial preview.
 		     This must be loaded before fileinput.min.js -->
-		<script src="../js/fileLoadJs/plugins/sortable.min.js" type="text/javascript"></script>
+		<!-- <script src="../js/fileLoadJs/plugins/sortable.min.js" type="text/javascript"></script> -->
 		<!-- purify.min.js is only needed if you wish to purify HTML content in your preview for HTML files.
 		     This must be loaded before fileinput.min.js -->
-		<script src="../js/fileLoadJs/plugins/purify.min.js" type="text/javascript"></script>
+		<!-- <script src="../js/fileLoadJs/plugins/purify.min.js" type="text/javascript"></script> -->
 		<!-- the main fileinput plugin file -->
 		<script src="../js/fileLoadJs/fileinput.min.js"></script>
 		<!-- optionally if you need a theme like font awesome theme you can include it as mentioned below -->
-		<script src="../themes/fa/theme.js"></script>
-		
+		<!-- <script src="../themes/fa/theme.js"></script> -->
 
-		<script type="text/javascript">
-			$("#input-id").fileinput();
-			// $(".fileinput-upload-button").remove();
-		</script>
+		<script type="text/javascript" src="../js/admin/userInside.js"></script>
 	</head>
 	<body>
 
@@ -65,15 +46,15 @@
 			   	 <form>
 			   	 	<div class="form-group">
 					   <label for="username">USERNAME</label>
-					   <input type="text" class="form-control" id="username">
+					   <input type="text" class="form-control" id="userName">
 					</div>
 				    <div class="form-group">
 				    	<label for="exampleInputPassword1">PASSWORD</label>
-				    	<input type="text" class="form-control" id="username">
+				    	<input type="text" class="form-control" id="password">
 				    </div>
 				    <div class="form-group">
 				    	<label for="exampleInputPassword1">COVER IMG</label>
-				    	<input id="input-id" type="file" class="file" data-preview-file-type="text" >
+				    	<input id="input-id" type="file" class="projectfile" data-preview-file-type="text" >
 				    </div>
 				    
 			   	 </form>
