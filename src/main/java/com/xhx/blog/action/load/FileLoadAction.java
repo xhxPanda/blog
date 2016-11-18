@@ -23,7 +23,7 @@ public class FileLoadAction extends BaseAction<UpLoadFile>{
 	
 	
 	public String add(){
-		String path = "upload\\image";
+		String path = "upload\\image\\";
 		String rootPath = ((ServletContext)ActionContext.getContext().get(ServletActionContext.SERVLET_CONTEXT)).getRealPath("/");
 		String filePath = rootPath + path + getFile_dataFileName();
 		
