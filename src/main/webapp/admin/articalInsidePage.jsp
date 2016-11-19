@@ -26,19 +26,17 @@
 
 		<!-- fileLoad文件 -->
 		<link href="../css/fileLoadCSS/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
-
-
-		<script src="../js/fileLoadJs/plugins/canvas-to-blob.min.js" type="text/javascript"></script>
+		<!-- <script src="../js/fileLoadJs/plugins/canvas-to-blob.min.js" type="text/javascript"></script> -->
 		<!-- sortable.min.js is only needed if you wish to sort / rearrange files in initial preview.
 		     This must be loaded before fileinput.min.js -->
-		<script src="../js/fileLoadJs/plugins/sortable.min.js" type="text/javascript"></script>
+		<!-- <script src="../js/fileLoadJs/plugins/sortable.min.js" type="text/javascript"></script> -->
 		<!-- purify.min.js is only needed if you wish to purify HTML content in your preview for HTML files.
 		     This must be loaded before fileinput.min.js -->
-		<script src="../js/fileLoadJs/plugins/purify.min.js" type="text/javascript"></script>
+		<!-- <script src="../js/fileLoadJs/plugins/purify.min.js" type="text/javascript"></script> -->
 		<!-- the main fileinput plugin file -->
 		<script src="../js/fileLoadJs/fileinput.min.js"></script>
 		<!-- optionally if you need a theme like font awesome theme you can include it as mentioned below -->
-		<script src="../themes/fa/theme.js"></script>
+		<!-- <script src="../themes/fa/theme.js"></script> -->
 		
 
 		<script type="text/javascript">
@@ -86,7 +84,6 @@
 				    	<label for="exampleInputPassword1">COVER IMG</label>
 				    	<input id="input-id" type="file" class="file" data-preview-file-type="text" >
 				    </div>
-				    
 			   	 </form>
 			  </div>
 			</div>
