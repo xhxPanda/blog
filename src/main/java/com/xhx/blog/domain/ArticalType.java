@@ -27,7 +27,7 @@ public class ArticalType implements Serializable{
 	private String name;
 	
 	@OneToMany(fetch = FetchType.LAZY)
-	@JoinColumn(name="typeId")
+	@JoinColumn(name="type_id")
 	private Set<Artical> artical = new HashSet<Artical>();
 
 	public String getName() {

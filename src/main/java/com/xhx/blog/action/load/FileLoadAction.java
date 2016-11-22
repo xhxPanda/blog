@@ -17,14 +17,13 @@ import com.xhx.blog.util.JsonUtil;
 
 public class FileLoadAction extends BaseAction<UpLoadFile>{
 	
-	private String filePath;
 	private String file_dataFileName;
 	private File file_data;
 	
 	
 	public String add(){
-		String path = "upload\\image\\";
-		String rootPath = ((ServletContext)ActionContext.getContext().get(ServletActionContext.SERVLET_CONTEXT)).getRealPath("/");
+		String path = "\\upload\\image\\";
+		String rootPath = ((ServletContext)ActionContext.getContext().get(ServletActionContext.SERVLET_CONTEXT)).getRealPath("");
 		String filePath = rootPath + path + getFile_dataFileName();
 		
 		try {
@@ -55,14 +54,6 @@ public class FileLoadAction extends BaseAction<UpLoadFile>{
 			throw e;
 		}
 		return true;
-	}
-
-	public String getFilePath() {
-		return filePath;
-	}
-
-	public void setFilePath(String filePath) {
-		this.filePath = filePath;
 	}
 
 	public String getFile_dataFileName() {

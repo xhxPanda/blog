@@ -54,7 +54,8 @@ public class UserServiceImpl  implements IUserService{
 
 	public List getAll(Class clazz) {
 		// TODO Auto-generated method stub
-		return null;
+		
+		return iUserDao.getAll(clazz);
 	}
 
 	public <T> List<T> getList(T t) {

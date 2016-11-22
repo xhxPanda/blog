@@ -8,6 +8,9 @@
 
 		<!-- 新 Bootstrap 核心 CSS 文件 -->
 		<link rel="stylesheet" href="../css/bootstrap.min.css">
+
+		<link rel="stylesheet" href="../css/admin/userInside.css">
+
 		<script src="../js/jquery.min.js"></script>
 		<script src="../js/bootstrap.min.js"></script>
 
@@ -52,11 +55,18 @@
 				    	<label for="exampleInputPassword1">PASSWORD</label>
 				    	<input type="text" class="form-control" id="password">
 				    </div>
+				     <div class="form-group">
+				    	<label for="exampleInputPassword1">AUTHORITY</label>
+				    	<select class="form-control" id="authority">
+				    		<option>请选择</option>
+				    		<option value="0">最高管理员</option>
+				    		<option value="1">作者</option>
+				    	</select>
+				    </div>
 				    <div class="form-group">
 				    	<label for="exampleInputPassword1">COVER IMG</label>
 				    	<input id="input-id" type="file" class="projectfile" data-preview-file-type="text" >
 				    </div>
-				    
 			   	 </form>
 			  </div>
 			</div>

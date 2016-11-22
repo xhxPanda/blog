@@ -32,4 +32,5 @@ public interface IUserService{
 	 */	 
 	 public User login(String loginName, String password);
 	 
+	 public List getAll(Class clazz);
 }

@@ -2,14 +2,19 @@ package com.xhx.blog.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -24,11 +29,16 @@ public class Artical implements Serializable{
 	
 	private String title;
 	private String content;
+	
+	@Column(name="post_time")
 	private Date postTime;
 	private int like;
 	private int dislike;
+	
+	@Column(name="read_num")
 	private int readNum;
 	private String summary;
+	@Column(name="cover_img")
 	private String coverImg;
 	
 	@ManyToOne(cascade = CascadeType.ALL, optional = false)
@@ -36,6 +46,10 @@ public class Artical implements Serializable{
 	
 	@ManyToOne(cascade = CascadeType.ALL, optional = false)
 	private ArticalType type;
+	
+	@OneToMany(fetch = FetchType.LAZY)
+	@JoinColumn(name="artical_id")
+	private Set<Comment> comment = new HashSet<Comment>() ;
 	
 	public String getTitle() {
 		return title;

@@ -60,7 +60,7 @@ public class BaseDao<T>  implements IBaseDao<T>{
 
 	public List getAll(Class clazz) {
 		// TODO Auto-generated method stub
-		return null;
+		return getSession();
 	}
 
 	public <T> List<T> getList(T t) {

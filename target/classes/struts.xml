@@ -34,7 +34,6 @@
 	
 	<package name="pic" namespace="/" extends="json-default">
 		<action name="addPic" class="com.xhx.blog.action.load.FileLoadAction" method="add">
-			<param name="filePath">\src\webapp\upload\image</param>
 			<result name="success" type="json">
 				<param name="root">result</param>
 			</result>

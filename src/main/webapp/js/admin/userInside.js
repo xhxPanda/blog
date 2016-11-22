@@ -1,4 +1,6 @@
 $(document).ready(function(){ 
+	
+
 	 $(".projectfile").fileinput({
 	   uploadUrl:'./addPic.action', // you must set a valid URL here else you will get an error
 	   allowedFileExtensions: ['jpg', 'gif', 'png'],//接收的文件后缀
@@ -16,11 +18,37 @@ $(document).ready(function(){
 	   enctype: 'multipart/form-data',
 	   validateInitialCount:true
     }).on("fileuploaded", function(event, data) {
-        if(data.response)
-        {
-            alert('处理成功');
-        }
-    })
+	        if(data.response){
+	        	var userName = $("#userName").val();
+				var password = $("#password").val();
+				var authority = $("#authority").val();
+
+				console.log(authority);
+       	
+	        	var path = data.response.filePath;
+
+	        	if(userName!=null&&userName!=""&&password!=null&&password!=""){
+	        		$.ajax({
+				        type: "POST",
+				        url: "./addUser.action",  
+				        data:{
+				        	'loginName' : userName,
+				        	'password' : password,
+				        	'headSculpture' : path,
+				        	'authority' : authority
+				        },
+				        success: function(msg){
+				            console.log(msg);
+				        }
+				    });  
+	        	}else{
+	        		alert("用户名与密码不能为空");
+	        	}
+	        }
+	        
+	    })
+
+	
 	 
 });
 	
