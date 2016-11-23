@@ -31,57 +31,14 @@ public class UserServiceImpl  implements IUserService{
 		alias.put("loginName", loginName);
 		User user = (User) iUserDao.queryObject(hql, alias);
 		
-		if (null != user && password.equals(MD5Util.encode(user.getPassword()))) {
+		if (null != user && MD5Util.encode(password).equals(user.getPassword())) {
 			return user;
 		}
-		return null;
-	}
-
-	public void delete(long id) {
-		// TODO Auto-generated method stub
-		iUserDao.delete(id);
-	}
-
-	public void delete(User t) {
-		// TODO Auto-generated method stub
-		iUserDao.delete(t);
-	}
-
-	public User get(Long id) {
-		// TODO Auto-generated method stub
-		return iUserDao.get(id);
-	}
-
-	public List getAll(Class clazz) {
-		// TODO Auto-generated method stub
-		
-		return iUserDao.getAll(clazz);
-	}
-
-	public <T> List<T> getList(T t) {
-		// TODO Auto-generated method stub
-		
-		iUserDao.getList(t);
-		return null;
-	}
-
-	public PageModel getPageBySQL(String sql, PageModel pm) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	public void save(User user) {
 		// TODO Auto-generated method stub
 		iUserDao.save(user);
-	}
-
-	public void update(User user) {
-		// TODO Auto-generated method stub
-		iUserDao.update(user);
-	}
-
-	public void delete(Long id) {
-		// TODO Auto-generated method stub
-		iUserDao.delete(id);
 	}
 }

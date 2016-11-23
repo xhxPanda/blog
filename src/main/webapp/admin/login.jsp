@@ -28,13 +28,13 @@
 			    <form role="form">
 				  <div class="form-group">
 				    <label for="exampleInputEmail1">USERNAME</label>
-				    <input type="email" class="form-control" id="exampleInputEmail1">
+				    <input type="text" class="form-control" id="userName">
 				  </div>
 				  <div class="form-group">
 				    <label for="exampleInputPassword1">PASSWORD</label>
-				    <input type="password" class="form-control" id="exampleInputPassword1">
+				    <input type="password" class="form-control" id="password">
 				  </div>
-				   <button type="submit" class="btn btn-default">Submit</button>
+				   <button type="button" class="submitButton btn btn-default">Submit</button>
 				</form>
 			  </div>
 			</div>

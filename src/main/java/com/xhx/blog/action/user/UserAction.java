@@ -51,21 +51,21 @@ public class UserAction extends BaseAction<User>{
 		return SUCCESS;
 	}
 	
-	public String getAllUser(){
-		
-		List<User> userList= userService.getAll(User.class);
-		
-		try {
-			result = JsonUtil.succList(userList);
-		} catch (InstantiationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return SUCCESS;
-	}
+//	public String getAllUser(){
+//		
+//		List<User> userList= userService.getAll(User.class);
+//		
+//		try {
+//			result = JsonUtil.succList(userList);
+//		} catch (InstantiationException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (IllegalAccessException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		return SUCCESS;
+//	}
 
 	public String getPassword() {
 		return password;

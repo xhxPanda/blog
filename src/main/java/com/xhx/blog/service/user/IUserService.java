@@ -13,18 +13,6 @@ public interface IUserService{
 	 public void save(User user);
 	 
 	 /**
-	 * 编辑方法
-	 * @param  user  编辑实体
-	 */
-	 public void update(User user);
-	 
-	 /**
-	 * 删除方法
-	 * @param  user  删除实体
-	 */
-	 public void delete(Long id);
-	 
-	 /**
 	 * 登陆
 	 * @param loginName
 	 * @param password
@@ -32,5 +20,4 @@ public interface IUserService{
 	 */	 
 	 public User login(String loginName, String password);
 	 
-	 public List getAll(Class clazz);
 }
