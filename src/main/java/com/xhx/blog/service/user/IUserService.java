@@ -28,7 +28,15 @@ public interface IUserService{
 	 
 	 /**
 	 * 根据id取出用户对象
+	 * @param id
 	 * @return
 	 */
 	 public User getUserById(Long id);
+	 
+	 /**
+	 * 根据id取出用户对象
+	 * user  更新实体
+	 * @return
+	 */
+	 public void update(User user);
 }

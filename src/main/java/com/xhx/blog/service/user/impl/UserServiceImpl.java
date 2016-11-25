@@ -50,11 +50,17 @@ public class UserServiceImpl  implements IUserService{
 		return iUserDao.list(hql, null,null);
 	}
 	
-	public User getUser(Long id){
+	public User getUserById(Long id){
 		Map<String, Object> alias = new HashMap<String, Object>();
 		String hql = "from User u where u.id= :id";
 		alias.put("id", id);
 		return (User)iUserDao.queryObject(hql, alias);
 		
 	}
+
+	public void update(User user) {
+		// TODO Auto-generated method stub
+		iUserDao.update(user);
+	}
+	
 }

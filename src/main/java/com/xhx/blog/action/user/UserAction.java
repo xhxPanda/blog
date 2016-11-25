@@ -79,24 +79,42 @@ public class UserAction extends BaseAction<User>{
 	
 	public String getUserById(){
 		User u = userService.getUserById(id);
-	if(u==null){
+		if(u==null){
+			
+				try {
+					result = JsonUtil.succObject(u);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			
+		}else{
+			result = JsonUtil.fail();
+			return ERROR;
+		}
 		
-			try {
-				result = JsonUtil.succObject(u);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		
-	}else{
-		result = JsonUtil.fail();
-		return ERROR;
+		return SUCCESS;
 	}
 	
-	
-	return SUCCESS;
+	public String update(){
+		User user = new User();
+		user.setLoginName(loginName);
+		user.setPassword(MD5Util.encode(password));
+		user.setHeadSculpture(headSculpture);
+		user.setAuthority(authority);
+		user.setSummary(summary);
+		
+		userService.update(user);
+		
+		result = JsonUtil.succ();
+		
+		return SUCCESS;
 	}
 
+	
+	
+	//getter&setter
 	public String getPassword() {
 		return password;
 	}

@@ -30,7 +30,28 @@
 				<param name="root">result</param>
 			</result>
 		</action>
+		
 		<action name="getAllUsers" class="com.xhx.blog.action.user.UserAction" method="getAllUsers">
+			
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<action name="getUserById" class="com.xhx.blog.action.user.UserAction" method="getUserById">
+			
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<action name="update" class="com.xhx.blog.action.user.UserAction" method="update">
 			
 			<result name="success" type="json">
 				<param name="root">result</param>
