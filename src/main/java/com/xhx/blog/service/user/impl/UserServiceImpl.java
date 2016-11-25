@@ -49,4 +49,12 @@ public class UserServiceImpl  implements IUserService{
 		String hql = "from User u order by id desc";
 		return iUserDao.list(hql, null,null);
 	}
+	
+	public User getUser(Long id){
+		Map<String, Object> alias = new HashMap<String, Object>();
+		String hql = "from User u where u.id= :id";
+		alias.put("id", id);
+		return (User)iUserDao.queryObject(hql, alias);
+		
+	}
 }

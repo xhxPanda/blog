@@ -25,4 +25,10 @@ public interface IUserService{
 	 * @return
 	 */	 
 	 public List<User> getAllUsers();
+	 
+	 /**
+	 * 根据id取出用户对象
+	 * @return
+	 */
+	 public User getUserById(Long id);
 }

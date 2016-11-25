@@ -16,6 +16,7 @@ import com.xhx.blog.util.MD5Util;
 @Scope("prototype")
 public class UserAction extends BaseAction<User>{
 	
+	private Long id;
 	private String loginName;
 	private String password; 
 	private String headSculpture;
@@ -74,6 +75,26 @@ public class UserAction extends BaseAction<User>{
 		
 		
 		return SUCCESS;
+	}
+	
+	public String getUserById(){
+		User u = userService.getUserById(id);
+	if(u==null){
+		
+			try {
+				result = JsonUtil.succObject(u);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
+	}else{
+		result = JsonUtil.fail();
+		return ERROR;
+	}
+	
+	
+	return SUCCESS;
 	}
 
 	public String getPassword() {
