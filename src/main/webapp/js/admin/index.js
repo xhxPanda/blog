@@ -18,7 +18,7 @@ $(document).ready(function(){
 		               		   '<img data-src="' + value.headSculpture + '" alt="...">'+
 		               		   ' <div class="caption">'+
 		               		   '<h3>'+value.loginName+'</h3>'+
-		               		   '<p>...</p>'+
+		               		   '<p>'+value.summary+'</p>'+
 		               		   '<p>'+
 				        	   '<a href="#" class="btn btn-primary" role="button">修改</a> '+
 				               '<a href="#" class="btn btn-default" role="button">删除</a>'+
