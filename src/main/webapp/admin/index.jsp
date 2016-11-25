@@ -31,7 +31,7 @@
 		<div class="user-box col-md-9">
 
 			<!-- <div class="panelLogin panel panel-default"> -->
-			  <div class="col-sm-6 col-md-4">
+			 <!--  <div class="col-sm-6 col-md-4">
 			    <div class="thumbnail">
 			      <img data-src="holder.js/300x300" alt="...">
 			      <div class="caption">
@@ -96,6 +96,10 @@
 			      </div>
 			    </div>
 			  </div>
+
+			  <s:iterator value="data" var="x">  
+				  <s:property value="#x.id"/>  
+			  </s:iterator>   -->
 			<!-- </div> -->
 
 		</div>

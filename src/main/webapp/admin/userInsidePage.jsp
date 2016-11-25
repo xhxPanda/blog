@@ -55,6 +55,10 @@
 				    	<label for="exampleInputPassword1">PASSWORD</label>
 				    	<input type="text" class="form-control" id="password">
 				    </div>
+				    <div class="form-group">
+				    	<label for="exampleInputPassword1">SUMMARY</label>
+				    	<input type="text" class="form-control" id="summary">
+				    </div>
 				     <div class="form-group">
 				    	<label for="exampleInputPassword1">AUTHORITY</label>
 				    	<select class="form-control" id="authority">

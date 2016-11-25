@@ -20,6 +20,7 @@ public class UserAction extends BaseAction<User>{
 	private String password; 
 	private String headSculpture;
 	private int authority;
+	private String summary;
 	
 	public String login(){
 		
@@ -39,6 +40,7 @@ public class UserAction extends BaseAction<User>{
 		user.setPassword(MD5Util.encode(password));
 		user.setHeadSculpture(headSculpture);
 		user.setAuthority(authority);
+		user.setSummary(summary);
 		
 		if(null==user.getLoginName()||null==user.getPassword()){
 			result = JsonUtil.fail();
@@ -51,21 +53,28 @@ public class UserAction extends BaseAction<User>{
 		return SUCCESS;
 	}
 	
-//	public String getAllUser(){
-//		
-//		List<User> userList= userService.getAll(User.class);
-//		
-//		try {
-//			result = JsonUtil.succList(userList);
-//		} catch (InstantiationException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (IllegalAccessException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		return SUCCESS;
-//	}
+	public String getAllUsers(){
+		
+		List<User> userList= userService.getAllUsers();
+		
+		if(userList.size()!=0){
+			try {
+				result = JsonUtil.succList(userList);
+			} catch (InstantiationException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IllegalAccessException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}else{
+			result = JsonUtil.fail();
+			return ERROR;
+		}
+		
+		
+		return SUCCESS;
+	}
 
 	public String getPassword() {
 		return password;
@@ -97,6 +106,14 @@ public class UserAction extends BaseAction<User>{
 
 	public void setAuthority(int authority) {
 		this.authority = authority;
+	}
+
+	public String getSummary() {
+		return summary;
+	}
+
+	public void setSummary(String summary) {
+		this.summary = summary;
 	}
 	
 }

@@ -22,6 +22,7 @@ $(document).ready(function(){
 	        	var userName = $("#userName").val();
 				var password = $("#password").val();
 				var authority = $("#authority").val();
+				var summary = $("#summary").val();
 
 				console.log(authority);
        	
@@ -35,7 +36,8 @@ $(document).ready(function(){
 				        	'loginName' : userName,
 				        	'password' : password,
 				        	'headSculpture' : path,
-				        	'authority' : authority
+				        	'authority' : authority,
+				        	'summary' : summary
 				        },
 				        success: function(msg){
 				            console.log(msg);

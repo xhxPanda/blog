@@ -1,57 +1,58 @@
 package com.xhx.blog.util;
 
+import java.util.List;
+
+
 public class PageModel<T>
 {
 	/**
+	 * 当前页（起始页)
+	 */
+	private Integer currentPage;
+	/**
 	 * 页面大小
 	 */
-	private int pageSize;
+	private Integer pageSize;
 	/**
-	 * 分页的起始页
+	 * 总数据大小
 	 */
-	private int pageNum;
+	private Long recordCount;
 	/**
-	 * 排序字段
+	 * 页面总数
 	 */
-	private String sort;
+	private Long pageCount;
 	/**
-	 * 排序方式
+	 * 页面数据
 	 */
-	private String order;
+	private List<T> recordList;
+	/**
+	 * 页码索引(开始)
+	 */
+	private Integer beginPageIndex;
+	/**
+	 * 页码索引(结束)
+	 */
+	private Integer endPageIndex;
 
 	/**
-	 * @return the sort
+	 * @return the currentPage
 	 */
-	@JsonIgnore
-	public String getSort() {
-		return sort;
+	public Integer getCurrentPage() {
+		return currentPage;
 	}
 
 	/**
-	 * @param sort the sort to set
+	 * @param currentPage
+	 *            the currentPage to set
 	 */
-	public void setSort(String sort) {
-		this.sort = sort;
-	}
-
-	/**
-	 * @return the order
-	 */
-	public String getOrder() {
-		return order;
-	}
-
-	/**
-	 * @param order the order to set
-	 */
-	public void setOrder(String order) {
-		this.order = order;
+	public void setCurrentPage(Integer currentPage) {
+		this.currentPage = currentPage;
 	}
 
 	/**
 	 * @return the pageSize
 	 */
-	public int getPageSize() {
+	public Integer getPageSize() {
 		return pageSize;
 	}
 
@@ -59,24 +60,89 @@ public class PageModel<T>
 	 * @param pageSize
 	 *            the pageSize to set
 	 */
-	public void setPageSize(int pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 	}
 
 	/**
-	 * @return the pageNum
+	 * @return the recordCount
 	 */
-	public int getPageNum() {
-		return pageNum;
+	public Long getRecordCount() {
+		return recordCount;
 	}
 
 	/**
-	 * @param pageNum the pageNum to set
+	 * @param recordCount the recordCount to set
 	 */
-	public void setPageNum(int pageNum) {
-		this.pageNum = pageNum;
+	public void setRecordCount(Long recordCount) {
+		this.recordCount = recordCount;
 	}
 
 
+	/**
+	 * @return the pageCount
+	 */
+	public Long getPageCount() {
+		return pageCount;
+	}
 
+	/**
+	 * @param pageCount the pageCount to set
+	 */
+	public void setPageCount(Long pageCount) {
+		this.pageCount = pageCount;
+	}
+
+	/**
+	 * @return the recordList
+	 */
+	public List<T> getRecordList() {
+		return recordList;
+	}
+
+	/**
+	 * @param recordList the recordList to set
+	 */
+	public void setRecordList(List<T> recordList) {
+		this.recordList = recordList;
+	}
+
+	/**
+	 * @return the beginPageIndex
+	 */
+	public Integer getBeginPageIndex() {
+		return beginPageIndex;
+	}
+
+	/**
+	 * @param beginPageIndex
+	 *            the beginPageIndex to set
+	 */
+	public void setBeginPageIndex(Integer beginPageIndex) {
+		this.beginPageIndex = beginPageIndex;
+	}
+
+	/**
+	 * @return the endPageIndex
+	 */
+	public Integer getEndPageIndex() {
+		return endPageIndex;
+	}
+
+	/**
+	 * @param endPageIndex
+	 *            the endPageIndex to set
+	 */
+	public void setEndPageIndex(Integer endPageIndex) {
+		this.endPageIndex = endPageIndex;
+	}
+	
+	public void setPageArgs(PageModel pager){
+		this.setBeginPageIndex(pager.getBeginPageIndex());
+		this.setCurrentPage(pager.getCurrentPage());
+		this.setEndPageIndex(pager.getEndPageIndex());
+		this.setPageCount(pager.getPageCount());
+		this.setPageSize(pager.getPageSize());
+		this.setRecordCount(pager.getRecordCount());
+	}
 }

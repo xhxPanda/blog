@@ -38,6 +38,9 @@ public class User implements Serializable{
 	@Column(name="u_authority")
 	private int authority;
 	
+	@Column(name="summary")
+	private String summary;
+	
 	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name="user_id")
 	private Set<Artical> artical = new HashSet<Artical>();
@@ -77,6 +80,12 @@ public class User implements Serializable{
 	}
 	public void setLoginName(String loginName) {
 		this.loginName = loginName;
+	}
+	public String getSummary() {
+		return summary;
+	}
+	public void setSummary(String summary) {
+		this.summary = summary;
 	}
 	
 }

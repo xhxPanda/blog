@@ -248,6 +248,16 @@ public class BaseDao<T>  implements IBaseDao<T>{
 			pager.setBeginPageIndex(beginPageIndex);
 			pager.setEndPageIndex(endPageIndex);
 		}
+		
+		//获得数量
+		private String getCountHql(String hql, boolean isHql) {
+			String e = hql.substring(hql.indexOf("from"));
+			String c = "select  count(*) " + e;
+			if (isHql)
+				c = c.replaceAll("fetch", "");
+			return c;
+		}
+		
 		public Integer getPageSize() {
 			return pageSize;
 		}

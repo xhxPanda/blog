@@ -20,4 +20,9 @@ public interface IUserService{
 	 */	 
 	 public User login(String loginName, String password);
 	 
+	 /**
+	 * 取出所有用户
+	 * @return
+	 */	 
+	 public List<User> getAllUsers();
 }

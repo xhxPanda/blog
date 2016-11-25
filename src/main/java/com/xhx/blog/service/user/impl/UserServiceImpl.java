@@ -17,6 +17,7 @@ import com.xhx.blog.domain.User;
 import com.xhx.blog.service.user.IUserService;
 import com.xhx.blog.util.PageModel;
 import com.xhx.blog.util.MD5Util;
+import com.xhx.blog.util.SystemContext;
 
 @Transactional
 @Service("userService")
@@ -40,5 +41,12 @@ public class UserServiceImpl  implements IUserService{
 	public void save(User user) {
 		// TODO Auto-generated method stub
 		iUserDao.save(user);
+	}
+
+	public List<User> getAllUsers() {
+		// TODO Auto-generated method stub
+		
+		String hql = "from User u order by id desc";
+		return iUserDao.list(hql, null,null);
 	}
 }
