@@ -63,5 +63,10 @@ public class UserServiceImpl  implements IUserService{
 		user.setPassword(MD5Util.encode(user.getPassword()));
 		iUserDao.update(user);
 	}
+
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+		iUserDao.delete(id);
+	}
 	
 }

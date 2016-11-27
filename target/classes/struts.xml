@@ -60,6 +60,15 @@
 				<param name="root">result</param>
 			</result>
 		</action>
+		<action name="deleteUser" class="com.xhx.blog.action.user.UserAction" method="delete">
+			
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
 	</package>
 	
 	<package name="pic" namespace="/" extends="json-default">

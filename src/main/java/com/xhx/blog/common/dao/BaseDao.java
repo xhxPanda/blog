@@ -54,7 +54,7 @@ public class BaseDao<T>  implements IBaseDao<T>{
         return sessionFactory.getCurrentSession();
     }
 
-	public void delete(long id) {
+	public void delete(Long id) {
 		// TODO Auto-generated method stub
 		T t = this.get(id);
 		

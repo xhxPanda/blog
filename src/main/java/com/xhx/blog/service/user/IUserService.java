@@ -35,8 +35,15 @@ public interface IUserService{
 	 
 	 /**
 	 * 根据id取出用户对象
-	 * user  更新实体
+	 * id  更新实体
 	 * @return
 	 */
 	 public void update(User user);
+	 
+	 /**
+	 * 根据id删除用户对象
+	 * id  删除实体
+	 * @return
+	 */
+	 public void delete(Long id);
 }

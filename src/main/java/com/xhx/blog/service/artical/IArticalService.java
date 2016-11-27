@@ -26,14 +26,8 @@ public interface IArticalService{
 	 public void delete(Long id);
 	 
 	 /**
-	 * 取出所有对象方法
-	 * @param Artical  取出实体
-	 */
-	 public List<Artical> getAll();
-	 
-	 /**
-	 * 取出所有对象方法
+	 * 根据id取出对象方法
 	 * @param Artical  按照取出实体
 	 */
-	 public List<Artical> getArticalAll();
+	 public Artical getArticalById(Long id);
 }

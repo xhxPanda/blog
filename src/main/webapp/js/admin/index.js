@@ -17,11 +17,12 @@ $(document).ready(function(){
 		               		   '<div class="thumbnail">'+
 		               		   '<img data-src="' + value.headSculpture + '" alt="...">'+
 		               		   ' <div class="caption">'+
+		               		   '<input id="userId" type="hidden" value="'+value.id+'">'+
 		               		   '<h3>'+value.loginName+'</h3>'+
 		               		   '<p>'+value.summary+'</p>'+
 		               		   '<p>'+
 				        	   '<a href="userInsidePage.jsp?userId='+value.id+'" class="btn btn-primary" role="button">修改</a> '+
-				               '<a href="#" class="btn btn-default" role="button">删除</a>'+
+				               '<a href="#" class="btn deleteBtn btn-default" role="button">删除</a>'+
 			                   '</p>'+' </div></div></div>';
 		                 
 		            });
@@ -32,6 +33,25 @@ $(document).ready(function(){
 	}
 
 	getData();
-	 
+	
+	$('#deleteBtn').click(function(){
+		var id = $('#userId').val();
+
+		$.ajax({
+	        type: "POST",
+	        url: "./deleteUser.action",  
+	        data:{
+	        	'id' : userId
+	        },
+	        success: function(data){
+	            if(data.status == "false"){
+	            	alert('网络错误');
+	            }else{
+	            	$('#deleteBtn').parent().parent().remove();
+	            }
+	        }
+
+	    });  
+	})
 });
 	

@@ -8,7 +8,7 @@ import com.xhx.blog.util.PageModel;
 public interface IBaseDao<T> {
 	
 	 //按照id删除
-	 public void delete(long id);
+	 public void delete(Long id);
 	 
 	 //按照对象删除
 	 public void delete(T t);

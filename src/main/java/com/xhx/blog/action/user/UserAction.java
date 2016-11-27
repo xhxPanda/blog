@@ -3,6 +3,8 @@ package com.xhx.blog.action.user;
 import java.io.File;
 import java.util.List;
 
+import net.sf.json.JSONObject;
+
 import org.apache.struts2.ServletActionContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -112,6 +114,13 @@ public class UserAction extends BaseAction<User>{
 		return SUCCESS;
 	}
 
+	public String delete(Long id){
+		userService.delete(id);
+		
+		result = JsonUtil.succ();
+		
+		return SUCCESS;
+	}
 	
 	
 	//getter&setter
