@@ -1,6 +1,44 @@
 $(document).ready(function(){ 
 	
 
+	var getUrlParam= function(name){
+		var reg
+		 = new RegExp("(^|&)"+
+		 name +"=([^&]*)(&|$)");
+		var r
+		 = window.location.search.substr(1).match(reg);
+		if (r!=null) return unescape(r[2]); return null;
+	}
+
+	var getData = function(userId){
+		if(userId == null||userId == ''){
+			return
+		}else{
+			$.ajax({
+		        type: "POST",
+		        url: "./getUserById.action",  
+		        data:{
+		        	'id' : userId
+		        },
+		        success: function(data){
+		            if(data.status == "false"){
+		            	alert('网络错误');
+		            }else{
+		            	$('#userName').val(data.loginName);
+		            	$('#summary').val(data.summary);
+		            	$('#authority').val(data.authority);
+		            	
+		            }
+		        }
+
+		    });  
+		}
+		
+	}
+
+	var userId = getUrlParam('userId');
+	getData(userId);
+
 	 $(".projectfile").fileinput({
 	   uploadUrl:'./addPic.action', // you must set a valid URL here else you will get an error
 	   allowedFileExtensions: ['jpg', 'gif', 'png'],//接收的文件后缀
@@ -27,30 +65,51 @@ $(document).ready(function(){
 				console.log(authority);
        	
 	        	var path = data.response.filePath;
-
-	        	if(userName!=null&&userName!=""&&password!=null&&password!=""){
-	        		$.ajax({
-				        type: "POST",
-				        url: "./addUser.action",  
-				        data:{
-				        	'loginName' : userName,
-				        	'password' : password,
-				        	'headSculpture' : path,
-				        	'authority' : authority,
-				        	'summary' : summary
-				        },
-				        success: function(msg){
-				            console.log(msg);
-				        }
-				    });  
+	        	if(userId==null||userId==''){
+	        		if(userName!=null&&userName!=""&&password!=null&&password!=""){
+		        		$.ajax({
+					        type: "POST",
+					        url: "./addUser.action",  
+					        data:{
+					        	'loginName' : userName,
+					        	'password' : password,
+					        	'headSculpture' : path,
+					        	'authority' : authority,
+					        	'summary' : summary
+					        },
+					        success: function(msg){
+					            console.log(msg);
+					        }
+					    });  
+		        	}else{
+		        		alert("用户名与密码不能为空");
+		        	}
 	        	}else{
-	        		alert("用户名与密码不能为空");
+	        		if(userName!=null&&userName!=""&&password!=null&&password!=""){
+	        			$.ajax({
+					        type: "POST",
+					        url: "./update.action",  
+					        data:{
+					        	'id' : userId,
+					        	'loginName' : userName,
+					        	'password' : password,
+					        	'headSculpture' : path,
+					        	'authority' : authority,
+					        	'summary' : summary
+					        },
+					        success: function(msg){
+					            console.log(msg);
+					        }
+					    });  
+	        		}
+	        		
 	        	}
+	        	
 	        }
 	        
 	    })
 
-	
+
 	 
 });
 	

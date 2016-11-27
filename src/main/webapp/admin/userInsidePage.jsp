@@ -53,7 +53,7 @@
 					</div>
 				    <div class="form-group">
 				    	<label for="exampleInputPassword1">PASSWORD</label>
-				    	<input type="text" class="form-control" id="password">
+				    	<input type="password" class="form-control" id="password" placeholder="如需修改密码在此填入新密码">
 				    </div>
 				    <div class="form-group">
 				    	<label for="exampleInputPassword1">SUMMARY</label>

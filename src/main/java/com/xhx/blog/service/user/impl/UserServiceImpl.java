@@ -60,6 +60,7 @@ public class UserServiceImpl  implements IUserService{
 
 	public void update(User user) {
 		// TODO Auto-generated method stub
+		user.setPassword(MD5Util.encode(user.getPassword()));
 		iUserDao.update(user);
 	}
 	

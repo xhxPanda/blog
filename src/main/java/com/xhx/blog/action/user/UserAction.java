@@ -79,7 +79,7 @@ public class UserAction extends BaseAction<User>{
 	
 	public String getUserById(){
 		User u = userService.getUserById(id);
-		if(u==null){
+		if(u!=null){
 			
 				try {
 					result = JsonUtil.succObject(u);
@@ -153,6 +153,14 @@ public class UserAction extends BaseAction<User>{
 
 	public void setSummary(String summary) {
 		this.summary = summary;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 	
 }
