@@ -20,6 +20,7 @@ public class ArticalAction extends BaseAction<Artical>{
 		Artical artical = new Artical();
 		
 		artical.setUser(userService.getUserById(getCurrentUserId()));
+		artical.setType(articalTypeService.get);
 		
 		result = JsonUtil.succ();
 		
