@@ -9,4 +9,6 @@ public interface IArticalTypeService {
 	public void save (ArticalType at);
 	
 	public List<ArticalType> getAll ();
+	
+	public ArticalType getArticalTypeById(Long id);
 }

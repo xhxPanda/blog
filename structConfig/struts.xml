@@ -74,7 +74,12 @@
 	<package name="artical" namespace="/artical" extends="json-default">
 		
 		<action name="save" class="com.xhx.blog.action.artical.ArticalAction" method="save">
-			
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">result</param>
+			</result>
 		</action>
 		
 	</package>
