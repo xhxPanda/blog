@@ -3,6 +3,11 @@ $(document).ready(function(){
 	var scannerHeightNinety = scannerHeight*0.9;
 	$(".headImage").css('height',scannerHeightNinety);
 
+	$('.loadMore').click(function(){
+		this.remove();
+		$('.loading').css('display','block');
+		
+	})
 	
 });
 	

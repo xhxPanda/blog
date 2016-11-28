@@ -27,6 +27,19 @@ public class ArticalAction extends BaseAction<Artical>{
 		
 		return SUCCESS;
 	}
+	
+	public String getArticalBy(Long id){
+		Artical artical = articalService.getArticalById(id);
+		
+		try {
+			result = JsonUtil.succObject(artical);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return SUCCESS;
+	}
 
 	
 	//getter&setter

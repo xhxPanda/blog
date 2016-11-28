@@ -70,3 +70,10 @@
 	display: block !important;
 	margin-bottom: 30px;
 }
+.loading{
+	display: none;
+	text-align: center;
+}
+.loading i{
+	font-size: 60px;
+}
