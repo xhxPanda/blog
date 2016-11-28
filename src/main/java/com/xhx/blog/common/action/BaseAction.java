@@ -15,6 +15,8 @@ import org.apache.struts2.interceptor.ServletResponseAware;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.xhx.blog.service.artical.IArticalService;
+import com.xhx.blog.service.articalType.IArticalTypeService;
 import com.xhx.blog.service.user.IUserService;
 import com.xhx.blog.util.SessionConstants;
 import com.xhx.blog.util.GetModelByJson;
@@ -91,14 +93,23 @@ SessionAware{
 		session.remove(SessionConstants.ROLE);
 	}
 	
+	protected long getCurrentUserId(){
+		return (Long) session.get(SessionConstants.USER_ID);
+	}
+	
 	protected void setCurrentUserId(long userId){
 		session.put(SessionConstants.USER_ID, userId);
 	}
 	
 	@Resource
 	protected IUserService userService;
-
 	
+	@Resource
+	protected IArticalTypeService articalTypeService;
+	
+	@Resource
+	protected IArticalService articalService;
+
 	
 	//set and get
 	public Class<T> getClz() {

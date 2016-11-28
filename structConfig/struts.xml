@@ -71,6 +71,37 @@
 		</action>
 	</package>
 	
+	<package name="artical" namespace="/artical" extends="json-default">
+		
+		<action name="save" class="com.xhx.blog.action.artical.ArticalAction" method="save">
+			
+		</action>
+		
+	</package>
+	
+	
+	<package name="type" namespace="/type" extends="json-default">
+	
+		<action name="save" class="com.xhx.blog.action.articalType.ArticalTypeAction" method="save">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<action name="getAllArticalType" class="com.xhx.blog.action.articalType.ArticalTypeAction" method="getAllArticalType">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+	
+	
 	<package name="pic" namespace="/" extends="json-default">
 		<action name="addPic" class="com.xhx.blog.action.load.FileLoadAction" method="add">
 			<result name="success" type="json">
@@ -80,6 +111,8 @@
 				<param name="root">result</param>
 			</result>
 		</action>
-	</package>
+	</package>	
+	
+	
 	<include file="struts-json.xml"></include>
 </struts>

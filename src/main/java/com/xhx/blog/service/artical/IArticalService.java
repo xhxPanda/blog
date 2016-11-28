@@ -12,7 +12,6 @@ public interface IArticalService{
 	 */
 	public void save(Artical artical);
 	
-
 	 /**
 	 * 编辑方法
 	 * @param  Artical  编辑实体
