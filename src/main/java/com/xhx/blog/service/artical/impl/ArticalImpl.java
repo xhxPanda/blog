@@ -5,12 +5,17 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.xhx.blog.dao.artical.IArticalDao;
 import com.xhx.blog.dao.user.IUserDao;
 import com.xhx.blog.domain.Artical;
 import com.xhx.blog.service.artical.IArticalService;
 import com.xhx.blog.util.PageModel;
 
+@Transactional
+@Service("articcalService")
 public class ArticalImpl implements IArticalService {
 	
 	@Resource

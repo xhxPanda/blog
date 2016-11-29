@@ -12,7 +12,7 @@ $(document).ready(function(){
 	            	var userData = data.data;
 	            	var html = '';
 	            	$.each(userData, function (n, value) {
-		               console.log(value);
+		               // console.log(value);
 		               html += '<div class="col-sm-6 col-md-4">'+
 		               		   '<div class="thumbnail">'+
 		               		   '<img data-src="' + value.headSculpture + '" alt="...">'+

@@ -6,11 +6,16 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.xhx.blog.dao.ArticalTypeDao.IArticalTypeDao;
 import com.xhx.blog.domain.ArticalType;
 import com.xhx.blog.service.articalType.IArticalTypeService;
 import com.xhx.blog.util.PageModel;
 
+@Transactional
+@Service("articcalTypeService")
 public class ArticcalTypeService implements IArticalTypeService {
 
 	@Resource
@@ -24,7 +29,7 @@ public class ArticcalTypeService implements IArticalTypeService {
 	public List<ArticalType> getAll() {
 		// TODO Auto-generated method stub
 		
-		String hql = "from ArticcalType at order by at.id desc";
+		String hql = "from ArticalType";
 		return articalTypeDao.list(hql, null,null);
 	}
 

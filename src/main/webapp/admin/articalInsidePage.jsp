@@ -23,7 +23,9 @@
 
 
     	<script type="text/javascript">
-	        var ue = UE.getEditor('container');
+	        var ue = UE.getEditor('container',{
+				initialFrameHeight:1000,//设置编辑器高度
+				scaleEnabled:true});
 	    </script>
 
 
@@ -48,6 +50,9 @@
 			$("#input-id").fileinput();
 			// $(".fileinput-upload-button").remove();
 		</script>
+
+
+		<script type="text/javascript" src="../js/admin/articalInside.js"></script>
 	</head>
 	<body>
 
@@ -68,27 +73,29 @@
 			   	 <form>
 			   	 	<div class="form-group">
 					   <label for="TITLE">TITLE</label>
-					   <input type="text" class="form-control" id="TITLE">
+					   <input type="text" class="form-control" id="title">
 					</div>
 				  	<div class="form-group">
 				    	<label for="SUMMARY">SUMMARY<span class="tips">(30字以内)</span></label>
-				    	<textarea class="form-control"></textarea>
+				    	<textarea id="summary" class="form-control"></textarea>
 				    </div>
 				    <div class="form-group">
 				    	<label>TYPE</label>
-				    	<select class="form-control">
+				    	<select id="type" class="form-control">
 				    		<option>请选择</option>
 				    	</select>
 				    </div>
 				    <div class="form-group">
 				    	<label>COMMENT</label>
-				    	<script id="container" name="content" type="text/plain" style="height: 1500px;">
+				    	<script id="container" name="content" type="text/plain" style="width: 100%;">
 					    </script>
 				    </div>
 				    <div class="form-group">
 				    	<label for="exampleInputPassword1">COVER IMG</label>
 				    	<input id="input-id" type="file" class="file" data-preview-file-type="text" >
 				    </div>
+
+				    <button type="button" class="submitBtn btn btn-primary">SUBMIT</button>
 			   	 </form>
 			  </div>
 			</div>

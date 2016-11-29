@@ -12,24 +12,28 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.JoinColumn;
+import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
-@Entity(name="articalType")
+@Entity
+@Table(name="articaltype")
 public class ArticalType implements Serializable{
 	
-	@GenericGenerator(name = "generator", strategy = "increment")
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GenericGenerator(name = "generator", strategy = "increment")
 	@Column(name = "id", unique = true, nullable = false)
 	private Long id;
 	
+	@Column(name="name")
 	private String name;
 	
 	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name="type_id")
 	private Set<Artical> artical = new HashSet<Artical>();
 
+	
 	public String getName() {
 		return name;
 	}

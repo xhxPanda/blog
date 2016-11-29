@@ -15,10 +15,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
-@Entity(name="articalType")
+@Entity
+@Table(name="artical")
 public class Artical implements Serializable{
 	
 	@GenericGenerator(name = "generator", strategy = "increment")
