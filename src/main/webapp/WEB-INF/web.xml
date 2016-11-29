@@ -62,8 +62,8 @@
   <filter>
     <filter-name>struts2</filter-name>
     <filter-class>
-			org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter
-		</filter-class>
+			com.xhx.blog.filters.MyStrutsFilter
+	</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>struts2</filter-name>

@@ -15,12 +15,17 @@
 		<!-- 配置文件 -->
    		 <script type="text/javascript" src="../js/utf8-jsp/ueditor.config.js"></script>
    		 <!-- 编辑器源码文件 -->
+   		 <script type="text/javascript" charset="utf-8" src="../js/utf8-jsp/ueditor.config.js"></script>
     	<script type="text/javascript" src="../js/utf8-jsp/ueditor.all.js"></script>
 	    <script type="text/javascript" charset="utf-8" src="../js/utf8-jsp/lang/zh-cn/zh-cn.js"></script>
+	    <link rel="stylesheet" type="text/css" href="../js/utf8-jsp/themes\default\css\ueditor.css">
+
+
 
     	<script type="text/javascript">
 	        var ue = UE.getEditor('container');
 	    </script>
+
 
 		<link rel="stylesheet" href="../css/admin/articalInsidePage.css">
 
@@ -70,13 +75,13 @@
 				    	<textarea class="form-control"></textarea>
 				    </div>
 				    <div class="form-group">
-				    	<label for="exampleInputPassword1">TYPE</label>
+				    	<label>TYPE</label>
 				    	<select class="form-control">
 				    		<option>请选择</option>
 				    	</select>
 				    </div>
 				    <div class="form-group">
-				    	<label for="exampleInputPassword1">COMMENT</label>
+				    	<label>COMMENT</label>
 				    	<script id="container" name="content" type="text/plain" style="height: 1500px;">
 					    </script>
 				    </div>
