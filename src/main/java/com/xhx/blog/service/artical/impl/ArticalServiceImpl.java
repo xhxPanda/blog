@@ -13,6 +13,7 @@ import com.xhx.blog.domain.Artical;
 import com.xhx.blog.domain.User;
 import com.xhx.blog.service.artical.IArticalService;
 import com.xhx.blog.util.PageModel;
+import com.xhx.blog.util.StringUtil;
 
 @Transactional
 @Service("articcalService")
@@ -44,7 +45,7 @@ public class ArticalServiceImpl implements IArticalService {
 	public PageModel<Artical> list(User user){
 		PageModel<Artical> pager = null;
 		if(user.getAuthority() == 0){
-			String hql = "from Artical order by postTime desc";
+			String hql = "from Artical";
 			pager = iArticalDao.findByAlias(hql, null);
 		}else{
 			String hql = "from Artical where userId = ? order by postTime desc";
@@ -52,12 +53,27 @@ public class ArticalServiceImpl implements IArticalService {
 			alias.put("id", user.getId());
 			pager = iArticalDao.findByAlias(hql, alias);
 		}
-		return null;
+		return pager;
 	}
 
-	public PageModel<Artical> list() {
+	public PageModel<Artical> list(Artical artical) {
 		// TODO Auto-generated method stub
-		return null;
+		
+		PageModel<Artical> pager = null;
+		
+		String hql = "from Artical a where isPass = 1";
+		hql+=StringUtil.isNull(artical.getType().toString())?"":" and a.type = "+artical.getType();
+		
+		
+		Map<String,Object> alias = new HashMap<String,Object>();
+		if(!StringUtil.isNull(artical.getUser().getId().toString())){
+			hql+=" and a.user = ?";
+			alias.put("user", artical.getUser());
+		}
+		
+		pager = iArticalDao.findByAlias(hql, alias);
+		
+		return pager;
 	}
 
 }

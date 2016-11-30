@@ -16,6 +16,8 @@ import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import com.xhx.blog.util.JsonIgnore;
+
 @Entity
 @Table(name="b_user")
 public class User implements Serializable{
@@ -63,6 +65,8 @@ public class User implements Serializable{
 	public void setAuthority(int authority) {
 		this.authority = authority;
 	}
+	
+	@JsonIgnore
 	public Set<Artical> getArtical() {
 		return artical;
 	}

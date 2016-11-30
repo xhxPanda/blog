@@ -16,6 +16,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import com.xhx.blog.util.JsonIgnore;
+
 @Entity
 @Table(name="articaltype")
 public class ArticalType implements Serializable{
@@ -49,7 +51,8 @@ public class ArticalType implements Serializable{
 	public void setId(Long id) {
 		this.id = id;
 	}
-
+	
+	@JsonIgnore
 	public Set<Artical> getArtical() {
 		return artical;
 	}

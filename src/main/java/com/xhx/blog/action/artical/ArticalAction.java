@@ -3,6 +3,10 @@ package com.xhx.blog.action.artical;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.struts2.json.JSONUtil;
+
+import net.sf.json.JSONObject;
+
 import com.xhx.blog.common.action.BaseAction;
 import com.xhx.blog.domain.Artical;
 import com.xhx.blog.domain.User;
@@ -19,11 +23,10 @@ public class ArticalAction extends BaseAction<Artical>{
 	private String content;
 	private String summary;
 	private String coverImg;
-	private Long type;
+	private Long typeId;
 	private int pageSize;
 	private int pageNum;
-	private String userName;
-	private String typeName;
+	private Long userId;
 	
 	public String save(){
 		
@@ -37,7 +40,7 @@ public class ArticalAction extends BaseAction<Artical>{
 		artical.setCoverImg(coverImg);
 		artical.setSummary(summary);
 		artical.setUser(userService.getUserById(getCurrentUserId()));
-		artical.setType(articalTypeService.getArticalTypeById(type));
+		artical.setType(articalTypeService.getArticalTypeById(typeId));
 		
 		if(artical.getTitle()==null||artical.getContent()==null){
 			result = JsonUtil.fail();
@@ -69,9 +72,41 @@ public class ArticalAction extends BaseAction<Artical>{
 		
 		User user = userService.getUserById(getCurrentUserId());
 		
+		PageModel<Artical> artical= articalService.list(user);
 		
+		try {
+			result = JsonUtil.succObject(artical);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			result = JsonUtil.fail();
+		}
 		
+		return SUCCESS;
+	}
+	
+	public String getArticalShow(){
+		SystemContext.setPageSize(pageSize);
+		SystemContext.setPageOffset(pageNum);
 		
+		Artical articalObject = new Artical();
+		if(userService.getUserById(userId)!=null){
+			articalObject.setUser(userService.getUserById(userId));
+		}
+		
+		if(typeId != null){
+			articalObject.setType(articalTypeService.getArticalTypeById(typeId));
+		}
+		
+		PageModel<Artical> artical = articalService.list(articalObject);
+		
+		try {
+			result = JsonUtil.succObject(artical);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			result = JsonUtil.fail();
+		}
 		
 		return SUCCESS;
 	}
@@ -117,16 +152,6 @@ public class ArticalAction extends BaseAction<Artical>{
 		this.coverImg = coverImg;
 	}
 
-
-	public Long getType() {
-		return type;
-	}
-
-
-	public void setType(Long type) {
-		this.type = type;
-	}
-
 	public int getPageSize() {
 		return pageSize;
 	}
@@ -140,6 +165,14 @@ public class ArticalAction extends BaseAction<Artical>{
 
 	public void setPageNum(int pageNum) {
 		this.pageNum = pageNum;
+	}
+
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 	
 }

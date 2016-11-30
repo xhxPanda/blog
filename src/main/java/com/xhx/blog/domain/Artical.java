@@ -19,6 +19,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import com.xhx.blog.util.JsonIgnore;
+
 @Entity
 @Table(name="artical")
 public class Artical implements Serializable{
@@ -119,5 +121,13 @@ public class Artical implements Serializable{
 	}
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	@JsonIgnore
+	public Set<Comment> getComment() {
+		return comment;
+	}
+	public void setComment(Set<Comment> comment) {
+		this.comment = comment;
 	}
 }

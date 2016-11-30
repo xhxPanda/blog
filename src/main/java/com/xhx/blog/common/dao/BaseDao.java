@@ -181,6 +181,7 @@ public class BaseDao<T>  implements IBaseDao<T>{
 			Long total = (Long) cquery.uniqueResult();
 			pager.setRecordCount(total); // 总记录数
 			pager.setPageCount((total + pager.getPageSize() - 1) / pager.getPageSize()); // 总页数
+			setPageCount((int)(total + pager.getPageSize() - 1) / pager.getPageSize());
 			setPageRange(pager);// 计算页码索引范围
 			return pager;
 		}
