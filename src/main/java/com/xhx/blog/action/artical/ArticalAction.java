@@ -1,10 +1,13 @@
 package com.xhx.blog.action.artical;
 
 import java.util.Date;
+import java.util.List;
 
 import com.xhx.blog.common.action.BaseAction;
 import com.xhx.blog.domain.Artical;
+import com.xhx.blog.domain.User;
 import com.xhx.blog.util.JsonUtil;
+import com.xhx.blog.util.PageModel;
 import com.xhx.blog.util.SessionConstants;
 import com.xhx.blog.util.StringUtil;
 import com.xhx.blog.util.SystemContext;
@@ -17,6 +20,10 @@ public class ArticalAction extends BaseAction<Artical>{
 	private String summary;
 	private String coverImg;
 	private Long type;
+	private int pageSize;
+	private int pageNum;
+	private String userName;
+	private String typeName;
 	
 	public String save(){
 		
@@ -52,6 +59,19 @@ public class ArticalAction extends BaseAction<Artical>{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		return SUCCESS;
+	}
+	
+	public String getArticalBack(){
+		SystemContext.setPageSize(pageSize);
+		SystemContext.setPageOffset(pageNum);
+		
+		User user = userService.getUserById(getCurrentUserId());
+		
+		
+		
+		
 		
 		return SUCCESS;
 	}
@@ -105,6 +125,21 @@ public class ArticalAction extends BaseAction<Artical>{
 
 	public void setType(Long type) {
 		this.type = type;
+	}
+
+	public int getPageSize() {
+		return pageSize;
+	}
+
+	public void setPageSize(int pageSize) {
+		this.pageSize = pageSize;
+	}
+	public int getPageNum() {
+		return pageNum;
+	}
+
+	public void setPageNum(int pageNum) {
+		this.pageNum = pageNum;
 	}
 	
 }

@@ -111,7 +111,7 @@ public class SystemContext {
 	 * 
 	 * @param page
 	 */
-	public static void setPageArgs(PageModel page) {
+	public static void setPageArgs(PageSupport page) {
 		if (page != null) {
 			if (page.getPageSize() > 0) {
 				setPageSize(page.getPageSize());
