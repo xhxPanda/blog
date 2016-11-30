@@ -34,6 +34,7 @@ public class Artical implements Serializable{
 	
 	@Column(name="post_time")
 	private Date postTime;
+	@Column(name="good")
 	private int like;
 	private int dislike;
 	

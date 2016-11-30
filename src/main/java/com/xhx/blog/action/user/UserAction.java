@@ -29,6 +29,7 @@ public class UserAction extends BaseAction<User>{
 		
 		User user = userService.login(loginName, password);
 		if(null != user){
+			setCurrentUserId(user.getId());
 			result = JsonUtil.succ();
 		}else{
 			result = JsonUtil.fail();

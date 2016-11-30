@@ -87,15 +87,13 @@
 				    </div>
 				    <div class="form-group">
 				    	<label>COMMENT</label>
-				    	<script id="container" name="content" type="text/plain" style="width: 100%;">
+				    	<script id="container" class="content" name="content" type="text/plain" style="width: 100%;">
 					    </script>
 				    </div>
 				    <div class="form-group">
 				    	<label for="exampleInputPassword1">COVER IMG</label>
-				    	<input id="input-id" type="file" class="file" data-preview-file-type="text" >
+				    	<input id="input-id" type="file" class="projectfile" data-preview-file-type="text" >
 				    </div>
-
-				    <button type="button" class="submitBtn btn btn-primary">SUBMIT</button>
 			   	 </form>
 			  </div>
 			</div>

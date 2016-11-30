@@ -33,6 +33,7 @@ public class UserServiceImpl  implements IUserService{
 		User user = (User) iUserDao.queryObject(hql, alias);
 		
 		if (null != user && MD5Util.encode(password).equals(user.getPassword())) {
+		
 			return user;
 		}
 		return null;

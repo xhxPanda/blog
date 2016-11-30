@@ -1,9 +1,12 @@
 package com.xhx.blog.action.artical;
 
+import java.util.Date;
+
 import com.xhx.blog.common.action.BaseAction;
 import com.xhx.blog.domain.Artical;
 import com.xhx.blog.util.JsonUtil;
 import com.xhx.blog.util.SessionConstants;
+import com.xhx.blog.util.StringUtil;
 import com.xhx.blog.util.SystemContext;
 
 public class ArticalAction extends BaseAction<Artical>{
@@ -19,11 +22,23 @@ public class ArticalAction extends BaseAction<Artical>{
 		
 		Artical artical = new Artical();
 		
+		Date date = new Date();
+		
+		artical.setPostTime(StringUtil.formate(date));
+		artical.setContent(content);
+		artical.setTitle(title);
+		artical.setCoverImg(coverImg);
+		artical.setSummary(summary);
 		artical.setUser(userService.getUserById(getCurrentUserId()));
 		artical.setType(articalTypeService.getArticalTypeById(type));
 		
-		articalService.save(artical);
-		result = JsonUtil.succ();
+		if(artical.getTitle()==null||artical.getContent()==null){
+			result = JsonUtil.fail();
+		}else{
+			articalService.save(artical);
+			result = JsonUtil.succ();
+			
+		}
 		
 		return SUCCESS;
 	}
