@@ -62,7 +62,7 @@ $(document).ready(function(){
 				var authority = $("#authority").val();
 				var summary = $("#summary").val();
 
-				console.log(authority);
+				// console.log(authority);
        	
 	        	var path = data.response.filePath;
 	        	if(userId==null||userId==''){

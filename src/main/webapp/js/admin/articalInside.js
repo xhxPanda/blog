@@ -8,6 +8,41 @@ $(document).ready(function(){
 		 = window.location.search.substr(1).match(reg);
 		if (r!=null) return unescape(r[2]); return null;
 	}
+
+	var articalId = getUrlParam('articalId');
+	
+
+	var getData = function(articalId){
+		if(articalId == null||articalId == ''){
+			return
+		}else{
+			$.ajax({
+		        type: "POST",
+		        url: "../artical/getArticalById.action",  
+		        data:{
+		        	'articalId' : articalId
+		        },
+		        success: function(data){
+		            if(data.status == "false"){
+		            	alert('网络错误');
+		            }else{
+		            	$('#title').val(data.title);
+		            	$('#summary').val(data.summary);
+		            	$('#type').val(data.type);
+		            	if(data.content != null){
+		            		UE.getEditor('container').setContent(data.content);
+		            	}
+		            	
+		            }
+		        }
+
+		    });  
+		}
+		
+	}
+
+	getData(articalId);
+
 	
 	var getTypeData = function(){
 		$.ajax({
@@ -54,7 +89,11 @@ $(document).ready(function(){
 	        	var title = $('#title').val();
 				var summary = $('#summary').val();
 				var type = $('#type').val();
-				var content = $('.content').val();
+				var content = UE.getEditor('container').getContent();
+
+				console.log(content);
+
+				var path = data.response.filePath;
 
 				if(title!=null&&type!=null||content!=null){
 					$.ajax({
@@ -63,8 +102,9 @@ $(document).ready(function(){
 				         data:{
 				        	'title' : title,
 				        	'summary' : summary,
-				        	'type' : type,
+				        	'typeId' : type,
 				        	'content' : content,
+				        	'coverImg' : path
 				        },
 				        success: function(data){
 				            if(data.status=='true'){
@@ -74,7 +114,6 @@ $(document).ready(function(){
 
 				    });  
 				}
-				console.log(data.response);
 			        	
 	        }
 	        

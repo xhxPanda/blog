@@ -38,8 +38,10 @@ public class ArticalServiceImpl implements IArticalService {
 	}
 
 	public Artical getArticalById(Long id) {
-		// TODO Auto-generated method stub
-		return iArticalDao.get(id);
+		Map<String, Object> alias = new HashMap<String, Object>();
+		String hql = "from Artical a where a.id= :id";
+		alias.put("id", id);
+		return (Artical)iArticalDao.queryObject(hql, alias);
 	}
 	
 	public PageModel<Artical> list(User user){

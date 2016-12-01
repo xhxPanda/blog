@@ -100,6 +100,15 @@
 			</result>
 		</action>
 		
+		<action name="getArticalById" class="com.xhx.blog.action.artical.ArticalAction" method="getArticalById">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
 	</package>
 	
 	

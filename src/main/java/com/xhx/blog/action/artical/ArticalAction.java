@@ -18,7 +18,7 @@ import com.xhx.blog.util.SystemContext;
 
 public class ArticalAction extends BaseAction<Artical>{
 	
-	
+	private Long articalId;
 	private String title;
 	private String content;
 	private String summary;
@@ -53,14 +53,15 @@ public class ArticalAction extends BaseAction<Artical>{
 		return SUCCESS;
 	}
 	
-	public String getArticalBy(Long id){
-		Artical artical = articalService.getArticalById(id);
+	public String getArticalById(){
+		Artical artical = articalService.getArticalById(articalId);
 		
 		try {
 			result = JsonUtil.succObject(artical);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			result = JsonUtil.fail();
 		}
 		
 		return SUCCESS;
@@ -107,6 +108,27 @@ public class ArticalAction extends BaseAction<Artical>{
 			e.printStackTrace();
 			result = JsonUtil.fail();
 		}
+		
+		return SUCCESS;
+	}
+	
+	public String update(){
+		
+		Artical artical = new Artical();
+		
+		Date date = new Date();
+		
+		artical.setPostTime(StringUtil.formate(date));
+		artical.setContent(content);
+		artical.setTitle(title);
+		artical.setCoverImg(coverImg);
+		artical.setSummary(summary);
+		
+		if(typeId!=null){
+			artical.setType(articalTypeService.getArticalTypeById(typeId));
+		}
+		
+		articalService.update(artical);
 		
 		return SUCCESS;
 	}
@@ -173,6 +195,22 @@ public class ArticalAction extends BaseAction<Artical>{
 
 	public void setUserId(Long userId) {
 		this.userId = userId;
+	}
+
+	public Long getTypeId() {
+		return typeId;
+	}
+
+	public void setTypeId(Long typeId) {
+		this.typeId = typeId;
+	}
+
+	public Long getArticalId() {
+		return articalId;
+	}
+
+	public void setArticalId(Long articalId) {
+		this.articalId = articalId;
 	}
 	
 }

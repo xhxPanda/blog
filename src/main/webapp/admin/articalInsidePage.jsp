@@ -87,7 +87,7 @@
 				    </div>
 				    <div class="form-group">
 				    	<label>COMMENT</label>
-				    	<script id="container" class="content" name="content" type="text/plain" style="width: 100%;">
+				    	<script id="container" class="articalContent" name="content" type="text/plain" style="width: 100%;">
 					    </script>
 				    </div>
 				    <div class="form-group">
