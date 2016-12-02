@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>首页</title>
+		<title>详细页</title>
 
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/articalDetail.css">
@@ -23,9 +23,6 @@
 
 		   <div class="headImageBox-font">
 		        <p>YNC WITH 1 CLICK FROM YOUR NATIVE DESIGN ENVIRONMENT—INTRODUCING CRAFT SYNC BETA</p>
-		        <div>
-		        	 <button class="btn btn-danger btn-head-img">READ</button>
-		        </div>
 		       
 		     </div>
 		</div>
