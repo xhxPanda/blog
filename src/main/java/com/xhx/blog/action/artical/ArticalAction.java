@@ -90,16 +90,7 @@ public class ArticalAction extends BaseAction<Artical>{
 		SystemContext.setPageSize(pageSize);
 		SystemContext.setPageOffset(pageNum);
 		
-		Artical articalObject = new Artical();
-		if(userService.getUserById(userId)!=null){
-			articalObject.setUser(userService.getUserById(userId));
-		}
-		
-		if(typeId != null){
-			articalObject.setType(articalTypeService.getArticalTypeById(typeId));
-		}
-		
-		PageModel<Artical> artical = articalService.list(articalObject);
+		PageModel<Artical> artical = articalService.list();
 		
 		try {
 			result = JsonUtil.succObject(artical);

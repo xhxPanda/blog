@@ -58,22 +58,14 @@ public class ArticalServiceImpl implements IArticalService {
 		return pager;
 	}
 
-	public PageModel<Artical> list(Artical artical) {
+	public PageModel<Artical> list() {
 		// TODO Auto-generated method stub
 		
 		PageModel<Artical> pager = null;
 		
-		String hql = "from Artical a where isPass = 1";
-		hql+=StringUtil.isNull(artical.getType().toString())?"":" and a.type = "+artical.getType();
+		String hql = "from Artical a where a.isPass = 1";
 		
-		
-		Map<String,Object> alias = new HashMap<String,Object>();
-		if(!StringUtil.isNull(artical.getUser().getId().toString())){
-			hql+=" and a.user = ?";
-			alias.put("user", artical.getUser());
-		}
-		
-		pager = iArticalDao.findByAlias(hql, alias);
+		pager = iArticalDao.findByAlias(hql, null);
 		
 		return pager;
 	}

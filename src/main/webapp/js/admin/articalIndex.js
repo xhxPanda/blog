@@ -5,8 +5,8 @@ $(document).ready(function(){
 	        type: "POST",
 	        url: "../artical/getArticalBack.action",
 	        data:{
-	        	pageSize:6,
-	        	pageNum:1
+	        	'pageSize':6,
+	        	'pageNum':1
 	        },
 	        success: function(data){
 	            console.log(data);

@@ -42,7 +42,7 @@ public interface IArticalService{
 	 * 展示页分页查询
 	 * @param hql
 	 */
-	 public PageModel<Artical> list(Artical artical);
+	 public PageModel<Artical> list();
 	 
 	 
 }

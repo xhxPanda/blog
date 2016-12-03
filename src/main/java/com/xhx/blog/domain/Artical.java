@@ -45,6 +45,8 @@ public class Artical implements Serializable{
 	private String summary;
 	@Column(name="cover_img")
 	private String coverImg;
+	@Column(name="is_pass")
+	private int isPass;
 	
 	@ManyToOne(cascade = CascadeType.ALL, optional = false)
 	private User user;
@@ -55,6 +57,8 @@ public class Artical implements Serializable{
 	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name="artical_id")
 	private Set<Comment> comment = new HashSet<Comment>() ;
+	
+	
 	
 	public String getTitle() {
 		return title;
@@ -129,5 +133,11 @@ public class Artical implements Serializable{
 	}
 	public void setComment(Set<Comment> comment) {
 		this.comment = comment;
+	}
+	public int getIsPass() {
+		return isPass;
+	}
+	public void setIsPass(int isPass) {
+		this.isPass = isPass;
 	}
 }
