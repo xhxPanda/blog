@@ -22,7 +22,7 @@ import org.hibernate.annotations.GenericGenerator;
 import com.xhx.blog.util.JsonIgnore;
 
 @Entity
-@Table(name="artical")
+@Table(name="b_artical")
 public class Artical implements Serializable{
 	
 	@GenericGenerator(name = "generator", strategy = "increment")

@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 
 import org.hibernate.annotations.GenericGenerator;
 
-@Entity(name="comment")
+@Entity(name="b_comment")
 public class Comment {
 	
 	@GenericGenerator(name = "generator", strategy = "increment")

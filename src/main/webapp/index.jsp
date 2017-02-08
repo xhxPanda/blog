@@ -53,7 +53,7 @@
 			SEE WHAT ELSE IS NEW...
 		</div>
 		<div class="artical-box-contain container">
-			<div class="row">
+			<div class="artical-total-box row">
 			  <div class="artical-box col-md-4">
 			  	<div class="artical-box-head-img">
 			  		<img src="image/aaa.jpg">
@@ -126,7 +126,7 @@
 		<div class="loadMore">
 			<button class="btn btn-danger btn-lg">LOAD MORE</button>
 		</div>
-		<div class="loading">
+		<div class="loading" style="display: none">
 			<i class="icon-spinner icon-spin"></i>
 		</div>
 	</body>

@@ -9,10 +9,12 @@ $(document).ready(function(){
 		
 	})
 
-    var pageSizeA = 6;
-    var pageNumA = 1;
+
 
 	var getData = function(pageSize,pageNum){
+
+		
+
 		$.ajax({
 	        type: "POST",
 	        url: "artical/getArticalShow.action",  
@@ -24,14 +26,32 @@ $(document).ready(function(){
 	            if(data.status == "false"){
 	            	alert('网络错误');
 	            }else{
-	            	console.log(data.data);
+	            	if(data.recordList.length!=0){
+	            		$('.loadMore').css('display','block');
+	            		$('.loading').css('display','none');
+	            	}else{
+	            		$('.loadMore').css('display','none');
+	            		$('.loading').css('display','none');
+	            	}
+	            	
 	            }
 	        }
 
 	    });  
 	}
 
+	var pageSizeA = 6;
+    var pageNumA = 1;
 	getData(pageSizeA,pageNumA);
 	
+
+	$('.loadMore').click(function(){
+		$('.loadMore').css('display','none');
+		$('.loading').css('display','block');
+		
+		pageNumA=pageNumA+1;
+		getData(pageSizeA,pageNumA);
+
+	})
 });
 	

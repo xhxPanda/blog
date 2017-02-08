@@ -19,7 +19,7 @@ import org.hibernate.annotations.GenericGenerator;
 import com.xhx.blog.util.JsonIgnore;
 
 @Entity
-@Table(name="articaltype")
+@Table(name="b_artical_type")
 public class ArticalType implements Serializable{
 	
 	@Id
