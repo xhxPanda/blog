@@ -27,6 +27,26 @@ $(document).ready(function(){
 	            	alert('网络错误');
 	            }else{
 	            	if(data.recordList.length!=0){
+
+	            		var html = '';
+		            	$.each(data.recordList, function (n, value) {
+			               // console.log(value);
+			               html += '<div class="artical-box col-md-4">'+
+			               		   '<div class="artical-box-head-img">'+
+			               		   '<img src="' + value.coverImg + '">'+
+			               		   '</div>'+
+			               		   '<div class="artical-box-font-all"><div class="artical-box-type">'+
+			               		   +value.type.name+
+			               		   '</div><h3 class="artical-box-title">'+
+			               		  value.title+
+					        	   '</h3><div class="artical-box-summary">'+
+					               value.summary+
+				                   '</div></div></div>';
+			                 
+			            });
+		            	$('.artical-total-box').append(html);
+
+
 	            		$('.loadMore').css('display','block');
 	            		$('.loading').css('display','none');
 	            	}else{

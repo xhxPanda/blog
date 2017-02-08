@@ -54,7 +54,7 @@
 		</div>
 		<div class="artical-box-contain container">
 			<div class="artical-total-box row">
-			  <div class="artical-box col-md-4">
+			  <!-- <div class="artical-box col-md-4">
 			  	<div class="artical-box-head-img">
 			  		<img src="image/aaa.jpg">
 			  	</div>
@@ -71,8 +71,8 @@
 				  	</div>
 			  	</div>
 			  	
-			  </div>
-			  <div class="artical-box col-md-4">
+			  </div> -->
+			  <!-- <div class="artical-box col-md-4">
 			  	<div class="artical-box-head-img">
 			  		<img src="image/aaa.jpg">
 			  	</div>
@@ -87,8 +87,8 @@
 				  		What’s wrong with putting work before everything else?
 				  	</div>
 			  	</div>
-			  </div>
-			  <div class="artical-box col-md-4">
+			  </div> -->
+			  <!-- <div class="artical-box col-md-4">
 			  	<div class="artical-box-head-img">
 			  		<img src="image/aaa.jpg">
 			  	</div>
@@ -103,8 +103,8 @@
 				  		What’s wrong with putting work before everything else?
 				  	</div>
 			  	</div>
-			  </div>
-			  <div class="artical-box col-md-4">
+			  </div> -->
+			  <!-- <div class="artical-box col-md-4">
 			  	<div class="artical-box-head-img">
 			  		<img src="image/aaa.jpg">
 			  	</div>
@@ -119,7 +119,7 @@
 				  		What’s wrong with putting work before everything else?
 				  	</div>
 			  	</div>
-			  </div>
+			  </div> -->
 			</div>
 		</div>
 
