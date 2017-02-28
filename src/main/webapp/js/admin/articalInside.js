@@ -89,6 +89,7 @@ $(document).ready(function(){
 	        	var title = $('#title').val();
 				var summary = $('#summary').val();
 				var type = $('#type').val();
+				var tag = $('#tag').val();
 				var content = UE.getEditor('container').getContent();
 
 				console.log(content);
@@ -104,7 +105,8 @@ $(document).ready(function(){
 				        	'summary' : summary,
 				        	'typeId' : type,
 				        	'content' : content,
-				        	'coverImg' : path
+				        	'coverImg' : path,
+				        	'tag' : tag
 				        },
 				        success: function(data){
 				            if(data.status=='true'){

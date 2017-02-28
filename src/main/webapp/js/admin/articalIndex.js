@@ -25,7 +25,7 @@ $(document).ready(function(){
 		               		   '<h3>'+value.title+'</h3>'+
 		               		   '<p>'+value.summary+'</p>'+
 		               		   '<p>'+
-				               '<a href="#" class="btn deleteBtn btn-default" role="button">删除</a>'+
+				               '<a href="#" class="btn deleteBtn btn-danger" role="button">删除</a>'+
 			                   '</p>'+' </div></div></div>';
 		                 
 		            });

@@ -35,8 +35,8 @@
 		<div class="title-box col-md-3">
 			<div class="panel panel-default">
 				<ul class="nav nav-pills nav-stacked" role="tablist">
-				 	<li role="presentation" class="active"><a href="#">用户管理</a></li>
-				 	<li role="presentation"><a href="#">文章管理</a></li>
+				 	<li role="presentation" class="active"><a href="index.jsp">用户管理</a></li>
+				 	<li role="presentation"><a href="articalIndex.jsp">文章管理</a></li>
 				 	<li role="presentation"><a href="#">分类管理</a></li>
 				</ul>
 			</div>

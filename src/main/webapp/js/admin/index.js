@@ -22,7 +22,7 @@ $(document).ready(function(){
 		               		   '<p>'+value.summary+'</p>'+
 		               		   '<p>'+
 				        	   '<a href="userInsidePage.jsp?userId='+value.id+'" class="btn btn-primary" role="button">修改</a> '+
-				               '<a href="#" class="btn deleteBtn btn-default" role="button">删除</a>'+
+				               '<a href="#" class="btn deleteBtn btn-danger" role="button">删除</a>'+
 			                   '</p>'+' </div></div></div>';
 		                 
 		            });

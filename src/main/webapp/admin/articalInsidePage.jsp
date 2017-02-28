@@ -59,8 +59,8 @@
 		<div class="title-box col-md-3">
 			<div class="panel panel-default">
 				<ul class="nav nav-pills nav-stacked" role="tablist">
-				 	<li role="presentation"><a href="#">用户管理</a></li>
-				 	<li role="presentation" class="active"><a href="#">文章管理</a></li>
+				 	<li role="presentation" class="active"><a href="index.jsp">用户管理</a></li>
+				 	<li role="presentation"><a href="articalIndex.jsp">文章管理</a></li>
 				 	<li role="presentation"><a href="#">分类管理</a></li>
 				</ul>
 			</div>
@@ -75,6 +75,11 @@
 					   <label for="TITLE">TITLE</label>
 					   <input type="text" class="form-control" id="title">
 					</div>
+					<div class="form-group">
+					   <label for="TITLE">TAG</label>
+					   <input type="text" class="form-control" id="tag" placeholder="不同的标签请用逗号隔开">
+					</div>
+
 				  	<div class="form-group">
 				    	<label for="SUMMARY">SUMMARY<span class="tips">(30字以内)</span></label>
 				    	<textarea id="summary" class="form-control"></textarea>
