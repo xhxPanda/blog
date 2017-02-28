@@ -43,6 +43,12 @@ public class User implements Serializable{
 	@Column(name="summary")
 	private String summary;
 	
+	@Column(name="age")
+	private int age;
+	
+	@Column(name="sex")
+	private int sex;
+	
 	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name="user_id")
 	private Set<Artical> artical = new HashSet<Artical>();
@@ -90,6 +96,18 @@ public class User implements Serializable{
 	}
 	public void setSummary(String summary) {
 		this.summary = summary;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public int getSex() {
+		return sex;
+	}
+	public void setSex(int sex) {
+		this.sex = sex;
 	}
 	
 }

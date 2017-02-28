@@ -27,6 +27,8 @@ $(document).ready(function(){
 		            	$('#userName').val(data.loginName);
 		            	$('#summary').val(data.summary);
 		            	$('#authority').val(data.authority);
+		            	$('#age').val(data.age);
+		            	$('#sex').val(data.sex);
 		            	
 		            }
 		        }
@@ -61,12 +63,14 @@ $(document).ready(function(){
 				var password = $("#password").val();
 				var authority = $("#authority").val();
 				var summary = $("#summary").val();
-
+				var age = $("#age").val();
+				var sex = $("#sex").val();
 				// console.log(authority);
        	
 	        	var path = data.response.filePath;
 	        	if(userId==null||userId==''){
-	        		if(userName!=null&&userName!=""&&password!=null&&password!=""){
+	        		if(userName!=null&&userName!=""&&password!=null
+	        			&&password!=""&&age!=null&&age!=""&&sex!=null&&sex!=""){
 		        		$.ajax({
 					        type: "POST",
 					        url: "./addUser.action",  
@@ -75,14 +79,16 @@ $(document).ready(function(){
 					        	'password' : password,
 					        	'headSculpture' : path,
 					        	'authority' : authority,
-					        	'summary' : summary
+					        	'summary' : summary,
+					        	'age' : age,
+					        	'sex' : sex
 					        },
 					        success: function(msg){
 					            console.log(msg);
 					        }
 					    });  
 		        	}else{
-		        		alert("用户名与密码不能为空");
+		        		alert("关键信息不能为空");
 		        	}
 	        	}else{
 	        		if(userName!=null&&userName!=""&&password!=null&&password!=""){
@@ -95,7 +101,9 @@ $(document).ready(function(){
 					        	'password' : password,
 					        	'headSculpture' : path,
 					        	'authority' : authority,
-					        	'summary' : summary
+					        	'summary' : summary,
+					        	'age' : age,
+					        	'sex' : sex
 					        },
 					        success: function(msg){
 					            console.log(msg);
@@ -108,8 +116,5 @@ $(document).ready(function(){
 	        }
 	        
 	    })
-
-
-	 
 });
 	

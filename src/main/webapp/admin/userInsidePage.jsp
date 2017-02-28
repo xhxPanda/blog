@@ -56,6 +56,19 @@
 				    	<input type="password" class="form-control" id="password" placeholder="如需修改密码在此填入新密码">
 				    </div>
 				    <div class="form-group">
+				    	<label for="exampleInputPassword1">age</label>
+				    	<input type="text" class="form-control" id="age">
+				    </div>
+				    <div class="form-group">
+				    	<label for="exampleInputPassword1">sex</label>
+				    	<select class="form-control" id="sex">
+				    		<option>请选择</option>
+				    		<option value="0">女</option>
+				    		<option value="1">男</option>
+				    	</select>
+				    </div>
+
+				    <div class="form-group">
 				    	<label for="exampleInputPassword1">SUMMARY</label>
 				    	<input type="text" class="form-control" id="summary">
 				    </div>

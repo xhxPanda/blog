@@ -32,28 +32,37 @@ public class Artical implements Serializable{
 	private Long id;
 	
 	private String title;
+	
 	private String content;
 	
 	@Column(name="post_time")
 	private Date postTime;
+	
 	@Column(name="good")
 	private int like;
+	
 	private int dislike;
 	
 	@Column(name="read_num")
 	private int readNum;
+	
 	private String summary;
+	
 	@Column(name="cover_img")
 	private String coverImg;
+	
 	@Column(name="is_pass")
 	private int isPass;
+	
+	@Column(name="tag")
+	private String tag;
 	
 	@ManyToOne(cascade = CascadeType.ALL, optional = false)
 	private User user;
 	
 	@ManyToOne(cascade = CascadeType.ALL, optional = false)
 	private ArticalType type;
-	
+		
 	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name="artical_id")
 	private Set<Comment> comment = new HashSet<Comment>() ;
@@ -139,5 +148,11 @@ public class Artical implements Serializable{
 	}
 	public void setIsPass(int isPass) {
 		this.isPass = isPass;
+	}
+	public String getTag() {
+		return tag;
+	}
+	public void setTag(String tag) {
+		this.tag = tag;
 	}
 }
