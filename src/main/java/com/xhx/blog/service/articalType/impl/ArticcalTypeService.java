@@ -42,5 +42,10 @@ public class ArticcalTypeService implements IArticalTypeService {
 		return (ArticalType)articalTypeDao.queryObject(hql,alias);
 	}
 
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+		articalTypeDao.delete(id);
+	}
+
 	
 }

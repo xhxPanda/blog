@@ -34,7 +34,7 @@ $(document).ready(function(){
 
 	getData();
 	
-	$('#deleteBtn').click(function(){
+	$('.deleteBtn').click(function(){
 		var id = $('#userId').val();
 
 		$.ajax({

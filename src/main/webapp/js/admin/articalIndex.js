@@ -21,11 +21,11 @@ $(document).ready(function(){
 		               		   '<div class="thumbnail">'+
 		               		   '<img data-src="' + value.coverImg + '" alt="...">'+
 		               		   ' <div class="caption">'+
-		               		   '<input id="userId" type="hidden" value="'+value.id+'">'+
+		               		   '<input id="articalId" type="hidden" value="'+value.id+'">'+
 		               		   '<h3>'+value.title+'</h3>'+
 		               		   '<p>'+value.summary+'</p>'+
 		               		   '<p>'+
-				               '<a href="#" class="btn deleteBtn btn-danger" role="button">删除</a>'+
+				               '<a href="#"  class="btn deleteBtn btn-danger" role="button">删除</a>'+
 			                   '</p>'+' </div></div></div>';
 		                 
 		            });
@@ -37,24 +37,24 @@ $(document).ready(function(){
 
 	getData();
 	
-	// $('#deleteBtn').click(function(){
-	// 	var id = $('#userId').val();
+	$('.deleteBtn').click(function(){
+		var id = $('#articalId').val();
 
-	// 	$.ajax({
-	//         type: "POST",
-	//         url: "./deleteUser.action",  
-	//         data:{
-	//         	'id' : userId
-	//         },
-	//         success: function(data){
-	//             if(data.status == "false"){
-	//             	alert('网络错误');
-	//             }else{
-	//             	$('#deleteBtn').parent().parent().remove();
-	//             }
-	//         }
+		$.ajax({
+	        type: "POST",
+	        url: "./deleteArtical.action",  
+	        data:{
+	        	'id' : id
+	        },
+	        success: function(data){
+	            if(data.status == "false"){
+	            	alert('网络错误');
+	            }else{
+	            	$('#deleteBtn').parent().parent().remove();
+	            }
+	        }
 
-	//     });  
-	// })
+	    });  
+	})
 });
 	

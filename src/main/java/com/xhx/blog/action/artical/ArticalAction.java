@@ -123,6 +123,15 @@ public class ArticalAction extends BaseAction<Artical>{
 		
 		return SUCCESS;
 	}
+	
+	public String deleteArtical(){
+		
+		articalService.delete(articalId);
+		
+		result = JsonUtil.succ();
+		
+		return SUCCESS;
+	}
 
 	
 	//getter&setter

@@ -54,6 +54,14 @@ public class ArticalTypeAction extends BaseAction<ArticalType>{
 		
 		return SUCCESS;	
 	}
+	
+	public String deleteType(){
+		articalTypeService.delete(id);
+		
+		result = JsonUtil.succ();
+		
+		return SUCCESS;
+	}
 
 	public long getId() {
 		return id;
