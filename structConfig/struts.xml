@@ -132,6 +132,15 @@
 			</result>
 		</action>
 		
+		<action name="update" class="com.xhx.blog.action.articalType.ArticalTypeAction" method="update">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
 		<action name="getAllArticalType" class="com.xhx.blog.action.articalType.ArticalTypeAction" method="getAllArticalType">
 			<result name="success" type="json">
 				<param name="root">result</param>

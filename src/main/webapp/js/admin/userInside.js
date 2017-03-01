@@ -109,6 +109,8 @@ $(document).ready(function(){
 					            console.log(msg);
 					        }
 					    });  
+	        		}else{
+	        			alert("关键信息不能为空");
 	        		}
 	        		
 	        	}

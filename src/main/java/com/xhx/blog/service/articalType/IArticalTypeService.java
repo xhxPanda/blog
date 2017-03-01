@@ -13,4 +13,6 @@ public interface IArticalTypeService {
 	public ArticalType getArticalTypeById(Long id);
 	
 	public void delete(Long id);
+	
+	public void update(ArticalType at);
 }

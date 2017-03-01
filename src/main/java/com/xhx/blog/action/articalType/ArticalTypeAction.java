@@ -3,6 +3,7 @@ package com.xhx.blog.action.articalType;
 import com.xhx.blog.common.action.BaseAction;
 import com.xhx.blog.domain.ArticalType;
 import com.xhx.blog.util.JsonUtil;
+import com.xhx.blog.util.MD5Util;
 
 public class ArticalTypeAction extends BaseAction<ArticalType>{
 	
@@ -57,6 +58,19 @@ public class ArticalTypeAction extends BaseAction<ArticalType>{
 	
 	public String deleteType(){
 		articalTypeService.delete(id);
+		
+		result = JsonUtil.succ();
+		
+		return SUCCESS;
+	}
+	
+	public String update(){
+		
+		ArticalType at = new ArticalType();
+		at.setId(id);
+		at.setName(name);
+		
+		articalTypeService.update(at);
 		
 		result = JsonUtil.succ();
 		

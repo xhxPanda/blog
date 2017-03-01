@@ -47,5 +47,10 @@ public class ArticcalTypeService implements IArticalTypeService {
 		articalTypeDao.delete(id);
 	}
 
+	public void update(ArticalType at) {
+		// TODO Auto-generated method stub
+		articalTypeDao.update(at);
+	}
+
 	
 }
