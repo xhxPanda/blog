@@ -7,9 +7,9 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>首页</title>
 
-		<!-- 新 Bootstrap 核心 CSS 文件 -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="css/Font-Awesome-3.2.1/css/font-awesome.css">
 
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
@@ -53,8 +53,8 @@
 			SEE WHAT ELSE IS NEW...
 		</div>
 		<div class="artical-box-contain container">
-			<div class="row">
-			  <div class="artical-box col-md-4">
+			<div class="artical-total-box row">
+			  <!-- <div class="artical-box col-md-4">
 			  	<div class="artical-box-head-img">
 			  		<img src="image/aaa.jpg">
 			  	</div>
@@ -71,8 +71,8 @@
 				  	</div>
 			  	</div>
 			  	
-			  </div>
-			  <div class="artical-box col-md-4">
+			  </div> -->
+			  <!-- <div class="artical-box col-md-4">
 			  	<div class="artical-box-head-img">
 			  		<img src="image/aaa.jpg">
 			  	</div>
@@ -87,8 +87,8 @@
 				  		What’s wrong with putting work before everything else?
 				  	</div>
 			  	</div>
-			  </div>
-			  <div class="artical-box col-md-4">
+			  </div> -->
+			  <!-- <div class="artical-box col-md-4">
 			  	<div class="artical-box-head-img">
 			  		<img src="image/aaa.jpg">
 			  	</div>
@@ -103,8 +103,8 @@
 				  		What’s wrong with putting work before everything else?
 				  	</div>
 			  	</div>
-			  </div>
-			  <div class="artical-box col-md-4">
+			  </div> -->
+			  <!-- <div class="artical-box col-md-4">
 			  	<div class="artical-box-head-img">
 			  		<img src="image/aaa.jpg">
 			  	</div>
@@ -119,12 +119,15 @@
 				  		What’s wrong with putting work before everything else?
 				  	</div>
 			  	</div>
-			  </div>
+			  </div> -->
 			</div>
 		</div>
 
 		<div class="loadMore">
 			<button class="btn btn-danger btn-lg">LOAD MORE</button>
+		</div>
+		<div class="loading" style="display: none">
+			<i class="icon-spinner icon-spin"></i>
 		</div>
 	</body>
 </html>

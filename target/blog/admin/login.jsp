@@ -4,22 +4,41 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Insert title here</title>
+		<title>管理员登录</title>
 
 		<!-- 新 Bootstrap 核心 CSS 文件 -->
 		<link rel="stylesheet" href="../css/bootstrap.min.css">
-		<link rel="stylesheet" href="../css/index.css">
-
 		<script src="../js/jquery.min.js"></script>
 		<script src="../js/bootstrap.min.js"></script>
+
+
+		<link rel="stylesheet" href="../css/admin/login.css">		
 		<script src="../js/admin/login.js"></script>
+
+		
 	</head>
 	<body>
-		<!-- <form> -->
-			<input id="userName" type="text" name="userName">
-			<input id="password" type="password" name="password">
-
-			<button class="submitButton">发送</button>
-		<!-- </form> -->
+		
+		<div class="container">
+			<div class="panelLogin panel panel-default">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">登录</h3>
+			  </div>
+			  <div class="panel-body">
+			    <form role="form">
+				  <div class="form-group">
+				    <label for="exampleInputEmail1">USERNAME</label>
+				    <input type="text" class="form-control" id="userName">
+				  </div>
+				  <div class="form-group">
+				    <label for="exampleInputPassword1">PASSWORD</label>
+				    <input type="password" class="form-control" id="password">
+				  </div>
+				   <button type="button" class="submitButton btn btn-default">Submit</button>
+				</form>
+			  </div>
+			</div>
+		</div>
+			
 	</body>
 </html>
