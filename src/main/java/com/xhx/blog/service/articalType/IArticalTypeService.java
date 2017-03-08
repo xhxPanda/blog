@@ -12,6 +12,8 @@ public interface IArticalTypeService {
 	
 	public ArticalType getArticalTypeById(Long id);
 	
+	public ArticalType getArticalTypeByName(String name);
+	
 	public void delete(Long id);
 	
 	public void update(ArticalType at);

@@ -110,12 +110,12 @@ public class SinaWebCrawlerURL {
 		return listURLSet;
 	}
 	
-	public static void main(String args[]){
-		SinaWebCrawlerURL  swc= new SinaWebCrawlerURL();
-		
-		HashSet<String> test = swc.getEconomicURL();
-		
-		System.out.print(test.size());
-	}
+//	public static void main(String args[]){
+//		SinaWebCrawlerURL  swc= new SinaWebCrawlerURL();
+//		
+//		HashSet<String> test = swc.getEconomicURL();
+//		
+//		System.out.print(test.size());
+//	}
 	
 }

@@ -76,6 +76,12 @@ public class ArticalTypeAction extends BaseAction<ArticalType>{
 		
 		return SUCCESS;
 	}
+	
+	public ArticalType getByName(){
+		ArticalType at = articalTypeService.getArticalTypeByName(name);
+		
+		return at;
+	}
 
 	public long getId() {
 		return id;

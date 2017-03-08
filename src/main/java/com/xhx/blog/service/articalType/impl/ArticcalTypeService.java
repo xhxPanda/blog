@@ -41,6 +41,15 @@ public class ArticcalTypeService implements IArticalTypeService {
 		
 		return (ArticalType)articalTypeDao.queryObject(hql,alias);
 	}
+	
+	public ArticalType getArticalTypeByName(String name) {
+		// TODO Auto-generated method stub
+		Map<String, Object> alias = new HashMap<String, Object>();
+		String hql = "from ArticalType at where at.name= :name";
+		alias.put("name", name);
+		
+		return (ArticalType)articalTypeDao.queryObject(hql,alias);
+	}
 
 	public void delete(Long id) {
 		// TODO Auto-generated method stub
