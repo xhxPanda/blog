@@ -34,7 +34,7 @@ public class SinaWebCrawler {
 				
 				String titleElement = doc.select("h1#main_title").text();
 				
-				Elements contentElement = doc.select("h1.content");
+				Elements contentElement = doc.select("div.content");
 				
 				contentElement.remove("div.ad_44086");
 				contentElement.remove("div.ad");
@@ -51,6 +51,62 @@ public class SinaWebCrawler {
 			}
 		}
 	}
+	
+	public void getSports(){
+		HashSet<String> sports = scURL.getSportsURL();
+		
+		aType = ata.getArticalTypeByName("体育");
+		
+		for(String s:sports){
+			try {
+				Document doc = Jsoup.connect(s).get();
+				
+				String titleElement = doc.select("h1#article-a__title").text();
+				
+				Elements contentElement = doc.select("div.article-a__content");
+				
+				contentElement.remove("link");
+								
+				at.setContent(contentElement.toString());
+				at.setTitle(titleElement);
+				at.setType(aType);
+				
+				asi.save(at);
+				
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	} 
+	
+	public void getEconomic(){
+		HashSet<String> economic = scURL.getEconomicURL();
+		
+		aType = ata.getArticalTypeByName("经济");
+		
+		for(String s:economic){
+			try {
+				Document doc = Jsoup.connect(s).get();
+				
+				String titleElement = doc.select("h1#artibodyTitle").text();
+				
+				Elements contentElement = doc.select("div.article article_16");
+				
+				contentElement.remove("div#ad_44099");
+								
+				at.setContent(contentElement.toString());
+				at.setTitle(titleElement);
+				at.setType(aType);
+				
+				asi.save(at);
+				
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	} 
 	
 	public static void main(String args[]){
 		

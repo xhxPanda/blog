@@ -53,7 +53,7 @@ public class SinaWebCrawlerURL {
 	}
 	
 	//爬取新浪体育数据
-	public HashSet<String> getSportURL(){
+	public HashSet<String> getSportsURL(){
 		
 		HashSet<String> listURLSet = new HashSet<String>();
 		
