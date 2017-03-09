@@ -1,5 +1,6 @@
 F:\eclipseDevelopZone\blog\src\main\java\com\xhx\blog\util\JsonIgnore.java
 F:\eclipseDevelopZone\blog\src\main\java\com\xhx\blog\util\SystemContext.java
+F:\eclipseDevelopZone\blog\src\main\java\com\xhx\blog\worm\SinaWebCrawler.java
 F:\eclipseDevelopZone\blog\src\main\java\com\xhx\blog\service\artical\IArticalService.java
 F:\eclipseDevelopZone\blog\src\main\java\com\xhx\blog\service\articalType\impl\ArticcalTypeService.java
 F:\eclipseDevelopZone\blog\src\main\java\com\xhx\blog\service\user\impl\UserServiceImpl.java
@@ -36,6 +37,7 @@ F:\eclipseDevelopZone\blog\src\main\java\com\xhx\blog\action\articalType\Artical
 F:\eclipseDevelopZone\blog\src\main\java\com\xhx\blog\common\action\BaseAction.java
 F:\eclipseDevelopZone\blog\src\main\java\com\xhx\blog\constant\Constants.java
 F:\eclipseDevelopZone\blog\src\main\java\com\xhx\blog\util\MD5Util.java
+F:\eclipseDevelopZone\blog\src\main\java\com\xhx\blog\worm\SinaWebCrawlerURL.java
 F:\eclipseDevelopZone\blog\src\main\java\com\xhx\blog\dao\artical\IArticalDao.java
 F:\eclipseDevelopZone\blog\src\main\java\com\xhx\blog\domain\History.java
 F:\eclipseDevelopZone\blog\src\main\java\com\xhx\blog\util\DateStringFormat.java

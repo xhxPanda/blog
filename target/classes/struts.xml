@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	
+	<constant name="struts.multipart.maxSize" value="9000000000000" /> 
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<!--开发者模式 -->
+	<constant name="struts.devMode" value="true" />
+	<!-- 把后缀名改为action -->
+	<constant name="struts.action.extension" value="action" />
+	
+	<package name="default" namespace="/" extends="json-default">
+		<action name="login" class="com.xhx.blog.action.user.UserAction" method="login">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<action name="addUser" class="com.xhx.blog.action.user.UserAction" method="addUser">
+			
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<action name="getAllUsers" class="com.xhx.blog.action.user.UserAction" method="getAllUsers">
+			
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<action name="getUserById" class="com.xhx.blog.action.user.UserAction" method="getUserById">
+			
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<action name="update" class="com.xhx.blog.action.user.UserAction" method="update">
+			
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		<action name="deleteUser" class="com.xhx.blog.action.user.UserAction" method="delete">
+			
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+	
+	<package name="artical" namespace="/artical" extends="json-default">
+		
+		<action name="save" class="com.xhx.blog.action.artical.ArticalAction" method="save">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<action name="getArticalBack" class="com.xhx.blog.action.artical.ArticalAction" method="getArticalBack">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<action name="getArticalShow" class="com.xhx.blog.action.artical.ArticalAction" method="getArticalShow">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<action name="getArticalById" class="com.xhx.blog.action.artical.ArticalAction" method="getArticalById">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<action name="deleteArtical" class="com.xhx.blog.action.artical.ArticalAction" method="deleteArtical">
+			
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+	
+	
+	<package name="type" namespace="/type" extends="json-default">
+	
+		<action name="save" class="com.xhx.blog.action.articalType.ArticalTypeAction" method="save">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<action name="update" class="com.xhx.blog.action.articalType.ArticalTypeAction" method="update">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<action name="getAllArticalType" class="com.xhx.blog.action.articalType.ArticalTypeAction" method="getAllArticalType">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<action name="getArticalTypeById" class="com.xhx.blog.action.articalType.ArticalTypeAction" method="getArticalTypeById">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<action name="deleteType" class="com.xhx.blog.action.articalType.ArticalTypeAction" method="deleteType">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+	
+	
+	<package name="pic" namespace="/" extends="json-default">
+		<action name="addPic" class="com.xhx.blog.action.load.FileLoadAction" method="add">
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>	
+	
+	
+	<include file="struts-json.xml"></include>
+</struts>
