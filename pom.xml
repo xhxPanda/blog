@@ -15,8 +15,7 @@
         <log4j.version>2.5</log4j.version>  
         
         <!-- 分词依赖 start -->
-        <lucene.version>5.2.1</lucene.version>  
-        <jcseg.version>1.9.6</jcseg.version>
+        <lucene.version>4.10.4</lucene.version>  
         <!-- 分词依赖 end -->
           
     </properties>  
@@ -160,7 +159,10 @@
 		</dependency>
         <!-- 爬虫依赖end -->
         
+        <!-- 分词依赖start -->
         
+      	<!-- 分词依赖 end -->  
+                
     </dependencies>  
     <build>  
         <finalName>blog</finalName>  
